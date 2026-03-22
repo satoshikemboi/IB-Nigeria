@@ -174,12 +174,12 @@ export default function Home() {
             <div className="flex gap-3 flex-wrap mb-9">
               <a
                 href="/compare"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-[0.95rem] font-medium rounded-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(22,163,74,0.4)] no-underline"
+                className="inline-flex items-center gap-2 px-7 py-2 md:py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-[0.95rem] font-medium rounded-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(22,163,74,0.4)] no-underline"
               >
                 Compare brokers ↗
               </a>
               <a
-                href="/rankings"
+                href="/brokers"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-transparent text-zinc-400 text-[0.95rem] border border-white/10 rounded-md transition-all duration-200 hover:border-white/30 hover:text-white no-underline"
               >
                 View all rankings
@@ -202,8 +202,8 @@ export default function Home() {
           </div>
 
           {/* ── RIGHT: rankings card ── */}
-          <div className="flex-1 basis-105 animate-fade-up-d1">
-            <div className="bg-[rgba(13,18,15,0.92)] border border-green-500/[0.14] rounded-2xl p-5 pb-4 backdrop-blur-xl card-shadow">
+          <div className="flex-1 object-contain basis-105 animate-fade-up-d1">
+            <div className="bg-[rgba(13,18,15,0.92)] border border-green-500/[0.14] rounded-2xl px-2 md:p-6 py-6 backdrop-blur-xl max-w-116 md:max-w-160 card-shadow">
 
               {/* Card header */}
               <div className="flex justify-between items-start mb-4">
@@ -231,7 +231,7 @@ export default function Home() {
               </div>
 
               {/* Broker rows */}
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-2">
                 {brokers.map((b) => (
                   <a
                     key={b.rank}
@@ -248,7 +248,7 @@ export default function Home() {
                     )}
 
                     {/* Rank */}
-                    <span className={`w-5 shrink-0 text-center text-[0.78rem] font-semibold ${b.rank === 1 ? "text-amber-400" : "text-zinc-600"}`}>
+                    <span className={`w-2 md:w-4 shrink-0 text-center text-[0.78rem] font-semibold ${b.rank === 1 ? "text-amber-400" : "text-zinc-600"}`}>
                       {b.rank}
                     </span>
 
@@ -281,7 +281,7 @@ export default function Home() {
                     </div>
 
                     {/* Spread */}
-                    <div className="w-18 text-right text-[0.73rem] text-zinc-400 shrink-0">
+                    <div className="md-w-18 text-right text-[0.73rem] text-zinc-400 shrink-0">
                       {b.spread}
                     </div>
 
