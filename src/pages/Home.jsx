@@ -100,8 +100,12 @@ function Stars({ score }) {
 function Ticker() {
   const doubled = [...tickers, ...tickers];
   return (
-    <div className="overflow-hidden bg-[#0d1117] border-b border-white/5 h-9 flex items-center">
-      <div className="flex whitespace-nowrap gap-10 animate-ticker"
+    <div className="bg-[#0d1117] border-b border-white/5 h-9 flex items-center"
+      style={{ overflow: "hidden", position: "relative", width: "100%" }}
+    >
+      <div
+        className="flex whitespace-nowrap gap-10 animate-ticker"
+        style={{ position: "absolute", left: 0 }}
       >
         {doubled.map((t, i) => (
           <span key={i} className="inline-flex items-center gap-2 text-xs">
@@ -129,7 +133,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen overflow-x-hidden">
+    <div style={{ overflowX: "hidden"}} className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen overflow-x-hidden">
 
       {/* ── Live ticker ── */}
       <Ticker />
