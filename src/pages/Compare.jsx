@@ -75,7 +75,7 @@ function Check({ val }) {
 
 function Row({ label, aVal, bVal }) {
   return (
-    <tr className="border-b border-white/[0.04] hover:bg-white/[0.02] transition-colors">
+    <tr className="border-b border-white/4 hover:bg-white/4 transition-colors">
       <td className="px-4 py-3 text-[0.78rem] text-zinc-500 w-1/3">{label}</td>
       <td className="px-4 py-3 text-center w-1/3"><Check val={aVal} /></td>
       <td className="px-4 py-3 text-center w-1/3"><Check val={bVal} /></td>
@@ -86,7 +86,7 @@ function Row({ label, aVal, bVal }) {
 function TableHead({ A, B }) {
   return (
     <thead>
-      <tr className="border-b border-white/[0.04]">
+      <tr className="border-b border-white/4">
         <th className="text-left px-4 py-2.5 text-[0.65rem] text-zinc-600 uppercase tracking-widest font-semibold w-1/3" />
         <th className="px-4 py-2.5 text-[0.65rem] text-green-400 uppercase tracking-widest font-semibold text-center w-1/3">{A.name}</th>
         <th className="px-4 py-2.5 text-[0.65rem] text-blue-400 uppercase tracking-widest font-semibold text-center w-1/3">{B.name}</th>
@@ -97,8 +97,8 @@ function TableHead({ A, B }) {
 
 function SectionBlock({ title, A, B, rows }) {
   return (
-    <div className="rounded-xl border border-white/[0.06] overflow-hidden">
-      <div className="px-5 py-3.5 bg-white/[0.02] border-b border-white/[0.06]">
+    <div className="rounded-xl border border-white/6 overflow-hidden">
+      <div className="px-5 py-3.5 bg-white/2 border-b border-white/6">
         <h3 className="font-playfair text-base font-semibold text-zinc-50">{title}</h3>
       </div>
       <table className="w-full text-sm">
@@ -115,7 +115,7 @@ function SectionBlock({ title, A, B, rows }) {
 function BrokerLogo({ broker, size = "sm" }) {
   const dim = size === "lg" ? "w-64 h-64" : "w-9 h-9";
   return (
-    <div className={`${dim} shrink-0 flex items-center justify-center overflow-hidden bg-white/[0.06] border border-white/[0.08]`}>
+    <div className={`${dim} shrink-0 flex items-center justify-center overflow-hidden bg-white/6 border border-white/8`}>
       <img
         src={broker.logo} alt={broker.name}
         className="w-full h-full object-contain p-1"
@@ -139,7 +139,7 @@ function ComparisonPanel({ matchup }) {
       {/* Broker header cards */}
       <div className="grid grid-cols-2 gap-4">
         {[A, B].map((broker, i) => (
-          <div key={broker.id} className={`flex flex-col items-center gap-3 p-5 rounded-lg border ${i === 0 ? "border-green-500/25 bg-green-500/[0.03]" : "border-blue-500/25 bg-blue-500/[0.03]"}`}>
+          <div key={broker.id} className={`flex flex-col items-center gap-3 p-5 rounded-lg border ${i === 0 ? "border-green-500/25 bg-green-500/3" : "border-blue-500/25 bg-blue-500/3"}`}>
             <div className="">
                  <BrokerLogo broker={broker} size="lg" />
             </div>
@@ -154,7 +154,7 @@ function ComparisonPanel({ matchup }) {
               href={broker.link}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className={`w-full text-center text-md font-semibold py-2.5 rounded-sm text-white no-underline hover:-translate-y-0.5 transition-all duration-200 ${i === 0 ? "bg-gradient-to-br from-green-600 to-green-700" : "bg-gradient-to-br from-blue-600 to-blue-700"}`}
+              className={`w-full text-center text-md font-semibold py-2.5 rounded-sm text-white no-underline hover:-translate-y-0.5 transition-all duration-200 ${i === 0 ? "bg-linear-to-br from-green-600 to-green-700" : "bg-linear-to-br from-blue-600 to-blue-700"}`}
             >
               Visit Site
             </a>
@@ -209,11 +209,11 @@ function ComparisonPanel({ matchup }) {
             to={broker.reviewLink}
             className={`flex items-center justify-center gap-1.5 py-3 rounded-xl border text-sm font-medium no-underline transition-all duration-200 hover:-translate-y-0.5 ${
               i === 0
-                ? "border-green-500/25 text-green-400 hover:bg-green-500/[0.05]"
-                : "border-blue-500/25 text-blue-400 hover:bg-blue-500/[0.05]"
+                ? "border-green-500/25 text-green-400 hover:bg-green-500/5"
+                : "border-blue-500/25 text-blue-400 hover:bg-blue-500/5"
             }`}
           >
-            Full {broker.name} review ↗
+            Full {broker.name} review 
           </Link>
         ))}
       </div>
@@ -232,8 +232,8 @@ function MatchupCard({ matchup, isActive, onClick }) {
       onClick={onClick}
       className={`w-full text-left flex flex-col gap-4 p-5 rounded-lg border transition-all duration-200 cursor-pointer ${
         isActive
-          ? "border-green-500/40 bg-green-500/[0.05]"
-          : "border-white/[0.06] bg-white/[0.02] hover:border-white/[0.14] hover:bg-white/[0.04]"
+          ? "border-green-500/40 bg-green-500/5"
+          : "border-white/6 bg-white/2 hover:border-white/[0.14] hover:bg-white/4"
       }`}
     >
       {/* Label */}
@@ -289,9 +289,9 @@ export default function Compare() {
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
       {/* ── Header ── */}
-      <div className="border-b border-white/[0.06] bg-[#0d1117]">
+      <div className="border-b border-white/6 bg-[#0d1117]">
         <div className="max-w-4xl mx-auto px-[5vw] py-12">
-          <div className="inline-flex items-center gap-2 text-[0.7rem] text-green-400 tracking-wide border border-green-500/25 bg-green-500/[0.06] px-3 py-1.5 rounded-full mb-5">
+          <div className="inline-flex items-center gap-2 text-[0.7rem] text-green-400 tracking-wide border border-green-500/25 bg-green-500/6 px-3 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
             Side-by-side broker comparison
           </div>
@@ -305,7 +305,7 @@ export default function Compare() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-[5vw] py-10">
+      <div className="max-w-6xl mx-auto px-[5vw] py-10">
 
         {/* ── 3 matchup boxes ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

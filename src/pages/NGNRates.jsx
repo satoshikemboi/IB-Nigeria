@@ -45,7 +45,7 @@ function SectionTitle({ children }) {
 function SparklineGraph({ data, width = 600, height = 180, loading }) {
   if (loading || data.length < 2) {
     return (
-      <div className="w-full h-[180px] rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-center">
+      <div className="w-full h-45 rounded-xl bg-white/2 border border-white/6 flex items-center justify-center">
         <div className="flex flex-col items-center gap-2">
           <div className="w-8 h-8 border-2 border-green-500/30 border-t-green-400 rounded-full animate-spin" />
           <span className="text-xs text-zinc-600">Loading chart data...</span>
@@ -85,7 +85,7 @@ function SparklineGraph({ data, width = 600, height = 180, loading }) {
   ];
 
   return (
-    <div className="w-full rounded-xl border border-white/[0.06] bg-[rgba(13,18,15,0.6)] overflow-hidden p-4">
+    <div className="w-full rounded-xl border border-white/6 bg-[rgba(13,18,15,0.6)] overflow-hidden p-4">
       <svg
         viewBox={`0 0 ${W} ${H + 24}`}
         className="w-full"
@@ -199,10 +199,10 @@ function RateCard({ currency, rate, prevRate, flag, loading }) {
   return (
     <div className={`flex flex-col gap-2.5 p-4 rounded-xl border transition-all duration-500 ${
       loading
-        ? "border-white/[0.06] bg-white/[0.02]"
+        ? "border-white/6 bg-white/2"
         : up
-          ? "border-green-500/20 bg-green-500/[0.025]"
-          : "border-red-500/20 bg-red-500/[0.025]"
+          ? "border-green-500/20 bg-green-500/2.5"
+          : "border-red-500/20 bg-red-500/2.5"
     }`}>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -213,8 +213,8 @@ function RateCard({ currency, rate, prevRate, flag, loading }) {
         </div>
         {!loading && (
           <span className={`text-[0.6rem] font-semibold px-1.5 py-0.5 rounded-full border ${
-            up ? "text-green-400 bg-green-500/[0.08] border-green-500/20"
-               : "text-red-400 bg-red-500/[0.08] border-red-500/20"
+            up ? "text-green-400 bg-green-500/8 border-green-500/20"
+               : "text-red-400 bg-red-500/8 border-red-500/20"
           }`}>
             {up ? "▲" : "▼"} {Math.abs(changePct)}%
           </span>
@@ -222,14 +222,14 @@ function RateCard({ currency, rate, prevRate, flag, loading }) {
       </div>
 
       {loading ? (
-        <div className="h-7 w-28 rounded-lg bg-white/[0.05] animate-pulse" />
+        <div className="h-7 w-28 rounded-lg bg-white/5 animate-pulse" />
       ) : (
         <div className="font-playfair text-xl font-semibold text-zinc-50 tabular-nums transition-all duration-300">
           ₦{fmt(rate, currency === "JPY" ? 4 : 2)}
         </div>
       )}
 
-      <div className="w-full h-0.5 rounded-full bg-white/[0.04] overflow-hidden">
+      <div className="w-full h-0.5 rounded-full bg-white/4 overflow-hidden">
         <div
           className={`h-full rounded-full transition-all duration-1000 ${up ? "bg-green-500" : "bg-red-500"}`}
           style={{ width: loading ? "20%" : `${Math.min(95, 50 + Math.abs(changePct) * 10000)}%` }}
@@ -302,9 +302,9 @@ export default function NGNRates() {
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
       {/* ── Page header ── */}
-      <div className="border-b border-white/[0.06] bg-[#0d1117]">
+      <div className="border-b border-white/6 bg-[#0d1117]">
         <div className="max-w-5xl mx-auto px-[5vw] py-12">
-          <div className="inline-flex items-center gap-2 text-[0.7rem] text-green-400 tracking-wide border border-green-500/25 bg-green-500/[0.06] px-3 py-1.5 rounded-full mb-5">
+          <div className="inline-flex items-center gap-2 text-[0.7rem] text-green-400 tracking-wide border border-green-500/25 bg-green-500/6 px-3 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
             Live · Updates every {REFRESH / 1000}s
           </div>
@@ -330,7 +330,7 @@ export default function NGNRates() {
 
         {/* Error */}
         {error && (
-          <div className="flex items-center gap-3 px-5 py-4 rounded-xl border border-red-500/20 bg-red-500/[0.04] text-sm text-red-400">
+          <div className="flex items-center gap-3 px-5 py-4 rounded-xl border border-red-500/20 bg-red-500/4 text-sm text-red-400">
             <span>⚠️</span> {error}
             <button onClick={fetchRates} className="ml-auto text-xs border border-red-500/30 px-3 py-1 rounded-md hover:bg-red-500/10 transition-colors cursor-pointer">
               Retry
@@ -398,17 +398,17 @@ export default function NGNRates() {
           <section>
             <SectionTitle>USD/NGN Converter</SectionTitle>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="flex flex-col gap-2 p-5 rounded-xl border border-green-500/[0.14] bg-green-500/[0.03]">
+              <div className="flex flex-col gap-2 p-5 rounded-xl border border-green-500/[0.14] bg-green-500/3">
                 <p className="text-[0.65rem] font-semibold text-green-400 uppercase tracking-widest">Current Rate</p>
                 <p className="font-playfair text-3xl font-semibold text-zinc-50 tabular-nums">₦{fmt(usdNgn)}</p>
                 <p className="text-[0.7rem] text-zinc-600">Per 1 USD · live</p>
               </div>
-              <div className="flex flex-col gap-2 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02]">
+              <div className="flex flex-col gap-2 p-5 rounded-xl border border-white/6 bg-white/2">
                 <p className="text-[0.65rem] font-semibold text-zinc-500 uppercase tracking-widest">$100 USD =</p>
                 <p className="font-playfair text-3xl font-semibold text-zinc-50 tabular-nums">₦{fmt(usdNgn * 100, 0)}</p>
                 <p className="text-[0.7rem] text-zinc-600">At current rate</p>
               </div>
-              <div className="flex flex-col gap-2 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02]">
+              <div className="flex flex-col gap-2 p-5 rounded-xl border border-white/6 bg-white/2">
                 <p className="text-[0.65rem] font-semibold text-zinc-500 uppercase tracking-widest">₦100,000 =</p>
                 <p className="font-playfair text-3xl font-semibold text-zinc-50 tabular-nums">${fmt(100000 / usdNgn)}</p>
                 <p className="text-[0.7rem] text-zinc-600">At current rate</p>
@@ -428,11 +428,11 @@ export default function NGNRates() {
             {brokerPremiums.map(b => {
               const brokerRate = usdNgn > 0 ? usdNgn * (1 + b.premium) : null;
               return (
-                <div key={b.rank} className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-green-500/20 transition-all duration-200 group">
+                <div key={b.rank} className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-white/6 bg-white/2 hover:border-green-500/20 transition-all duration-200 group">
                   <span className={`w-5 shrink-0 text-center text-[0.78rem] font-semibold ${b.rank === 1 ? "text-amber-400" : "text-zinc-600"}`}>
                     {b.rank}
                   </span>
-                  <div className="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center overflow-hidden bg-white/[0.06] border border-white/[0.08]">
+                  <div className="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center overflow-hidden bg-white/6 border border-white/8">
                     <img
                       src={b.logo} alt={b.name}
                       className="w-full h-full object-contain p-1"
@@ -447,7 +447,7 @@ export default function NGNRates() {
                   </div>
                   <div className="text-right shrink-0">
                     {loading ? (
-                      <div className="h-4 w-24 rounded bg-white/[0.05] animate-pulse" />
+                      <div className="h-4 w-24 rounded bg-white/5 animate-pulse" />
                     ) : (
                       <>
                         <div className="text-sm font-semibold text-zinc-100 tabular-nums">
@@ -478,14 +478,14 @@ export default function NGNRates() {
         </section>
 
         {/* ── CTA ── */}
-        <div className="flex flex-col items-center gap-4 py-10 border-t border-white/[0.06] text-center">
+        <div className="flex flex-col items-center gap-4 py-10 border-t border-white/6 text-center">
           <h2 className="font-playfair text-xl font-semibold text-zinc-50">Want to compare brokers in full?</h2>
           <p className="text-zinc-500 text-sm max-w-sm">
             See full reviews covering spreads, regulation, NGN deposits and more.
           </p>
           <Link
             to="/brokers"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-br from-green-600 to-green-700 text-white text-sm font-semibold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-sm font-semibold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
           >
             Browse broker reviews
           </Link>

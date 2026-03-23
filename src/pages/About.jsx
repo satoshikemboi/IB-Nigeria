@@ -106,7 +106,7 @@ export default function About() {
           </h1>
 
           <p className="text-base leading-7 text-zinc-400 font-light max-w-xl mb-8">
-            fxbrokers.ng was built because Nigerian traders deserve the same quality of
+            <span className="text-green-400 font-semibold">fxbrokers</span> was built because Nigerian traders deserve the same quality of
             independent broker research that traders in the UK and US have access to —
             tested specifically for NGN deposits, Naira withdrawals, and local payment methods.
           </p>

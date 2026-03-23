@@ -144,7 +144,7 @@ export default function Home() {
         <div className="absolute inset-0 z-1 hero-grid pointer-events-none" />
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-100 rounded-full z-1 hero-glow pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-3 py-12 flex items-center gap-16 flex-wrap">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-3 py-12 flex items-center gap-16 flex-wrap">
 
           {/* ── LEFT: headline + CTA ── */}
           <div className="flex-1 basis-96 animate-fade-up">
