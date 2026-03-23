@@ -226,8 +226,8 @@ export default function Home() {
           </div>
 
           {/* ── RIGHT: rankings card ── */}
-          <div className="flex-1 object-contain basis-105 animate-fade-up-d1">
-            <div className="bg-[rgba(13,18,15,0.92)] border border-green-500/[0.14] rounded-2xl px-2 md:p-6 py-6 backdrop-blur-xl max-w-116 md:max-w-160 card-shadow">
+          <div className="w-full md:flex-1 animate-fade-up-d1">
+            <div className="bg-[rgba(13,18,15,0.92)] border border-green-500/[0.14] rounded-2xl px-2 md:p-6 py-6 backdrop-blur-xl w-full max-w-full md:max-w-[640px] card-shadow">
 
               {/* Card header */}
               <div className="flex justify-between items-start mb-4">
@@ -255,7 +255,7 @@ export default function Home() {
               </div>
 
               {/* Broker rows */}
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 overflow-x-hidden">
                 {brokers.map((b) => (
                   <div
                     key={b.rank}
