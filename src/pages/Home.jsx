@@ -7,7 +7,7 @@ const KEYFRAMES = `
 
   @keyframes ticker {
     from { transform: translateX(100vw); }
-    to   { transform: translateX(-50%); }
+    to   { transform: translateX(-100%); }
   }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -110,7 +110,7 @@ function Ticker() {
     >
       <div
         className="flex whitespace-nowrap gap-10 animate-ticker"
-        style={{ position: "absolute", left: 0 }}
+        style={{ position: "absolute", left: 0, willChange: "transform" }}
       >
         {doubled.map((t, i) => (
           <span key={i} className="inline-flex items-center gap-2 text-xs">
@@ -141,7 +141,7 @@ export default function Home() {
     <div style={{ overflowX: "hidden"}} className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen overflow-x-hidden">
 
       {/* ── Live ticker ── */}
-      <Ticker />
+      {/* <Ticker /> */}
 
       {/* ── HERO ── */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
@@ -149,7 +149,7 @@ export default function Home() {
         {/* Background layers */}
         <div className="absolute inset-0 z-0 hero-bg" />
         <div className="absolute inset-0 z-1 hero-grid pointer-events-none" />
-        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(700px,100vw)] h-[400px] rounded-full z-1 hero-glow pointer-events-none" />
+        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(700px,100vw)] h-100 rounded-full z-1 hero-glow pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-3 py-12 flex items-center gap-16 flex-wrap">
 
