@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 /* ── Keyframes + fonts (only things Tailwind can't do at runtime) ─────────── */
 const KEYFRAMES = `
@@ -233,11 +234,8 @@ export default function Home() {
               {/* Broker rows */}
               <div className="flex flex-col gap-2">
                 {brokers.map((b) => (
-                  <a
+                  <div
                     key={b.rank}
-                    href={b.link}
-                    target="_blank"
-                    rel="noopener noreferrer sponsored"
                     className="broker-row relative flex items-center gap-2.5 px-3 py-3 bg-white/2.5 border border-white/6 rounded-xl no-underline transition-all duration-200 hover:border-green-500/30 hover:bg-green-500/4 group"
                   >
                     {/* Best badge */}
@@ -297,7 +295,7 @@ export default function Home() {
                           ↗
                         </span>
                     </a>
-                  </a>
+                  </div>
                 ))}
               </div>
 
@@ -307,7 +305,7 @@ export default function Home() {
                   Scores based on 50+ tested criteria
                 </span>
                 <a
-                  href="/rankings"
+                  href="/brokers"
                   className="text-[0.75rem] text-green-400 font-medium no-underline hover:underline"
                 >
                   Full rankings →

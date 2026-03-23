@@ -7,6 +7,11 @@ import Navbar from "./components/Navbar";
 import Guides from "./pages/Guides";
 import Brokers from "./pages/Brokers";
 import Exness from "./components/Exness";
+import JustMarkets from "./components/JustMarkets";
+import HFM from "./components/HFM";
+import XM from "./components/XM";
+import FBS from "./components/FBS";
+import FxPro from "./components/FxPro"; 
 
 function App() {
   return (
@@ -19,6 +24,11 @@ function App() {
         <Route path="/guides" element={<Guides />} />
         <Route path="/brokers" element={<Brokers />} />
         <Route path="/brokers/exness" element={<Exness />} />
+        <Route path="/brokers/justmarkets" element={<JustMarkets />} />
+        <Route path="/brokers/hfm" element={<HFM />} />
+        <Route path="/brokers/xm" element={<XM />} />
+        <Route path="/brokers/fbs" element={<FBS />} />
+        <Route path="/brokers/fxpro" element={<FxPro />} />
       </Routes>
     </Router>
   );

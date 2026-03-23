@@ -87,7 +87,7 @@ export default function Brokers() {
           </h1>
 
           <p className="text-lg text-zinc-300 leading-relaxed max-w-3xl">
-            fxbrokers.ng provides unbiased forex broker reviews and ratings to help Nigerian
+            <span className="text-green-400 font-bold">fxbrokers.ng</span> provides unbiased forex broker reviews and ratings to help Nigerian
             traders find the best broker for their needs. Our team tests and assesses brokers
             on over 50 variables including NGN deposit support, spreads, regulation, and
             withdrawal speed.
