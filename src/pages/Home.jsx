@@ -167,7 +167,7 @@ export default function Home() {
         <div className="absolute inset-0 z-1 hero-grid pointer-events-none" />
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(700px,100vw)] h-100 rounded-full z-1 hero-glow pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-3 py-12 flex items-center gap-16 flex-wrap">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-3 py-12 flex gap-16 flex-wrap">
 
           {/* ── LEFT: headline + CTA ── */}
           <div className="flex-1 basis-96 animate-fade-up">
@@ -227,7 +227,7 @@ export default function Home() {
 
           {/* ── RIGHT: rankings card ── */}
           <div className="w-full md:flex-1 animate-fade-up-d1">
-            <div className="bg-[rgba(13,18,15,0.92)] border border-green-500/[0.14] rounded-2xl px-2 md:p-6 py-6 backdrop-blur-xl w-full max-w-full md:max-w-[640px] card-shadow">
+            <div className="bg-[rgba(13,18,15,0.92)] border border-green-500/[0.14] rounded-2xl px-2 md:p-6 py-6 backdrop-blur-xl w-full max-w-full md:max-w-160 card-shadow">
 
               {/* Card header */}
               <div className="flex justify-between items-start mb-4">
@@ -259,7 +259,7 @@ export default function Home() {
                 {brokers.map((b) => (
                   <div
                     key={b.rank}
-                    className="broker-row relative flex items-center gap-2.5 px-3 py-3 bg-white/2.5 border border-white/6 rounded-xl no-underline transition-all duration-200 hover:border-green-500/30 hover:bg-green-500/4 group"
+                    className="broker-row relative flex items-center gap-2.5 px-3 py-3 mt-2 bg-white/2.5 border border-white/6 rounded-xl no-underline transition-all duration-200 hover:border-green-500/30 hover:bg-green-500/4 group"
                   >
                     {/* Best badge */}
                     {b.badge && (
@@ -302,7 +302,7 @@ export default function Home() {
                     </div>
 
                     {/* Spread */}
-                    <div className="md:w-18 text-right text-[0.73rem] text-zinc-400 shrink-0">
+                    <div className="hidden md:block md:w-18 text-right text-[0.73rem] text-zinc-400 shrink-0">
                       {b.spread}
                     </div>
 
