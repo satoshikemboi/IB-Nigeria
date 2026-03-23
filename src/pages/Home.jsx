@@ -7,7 +7,7 @@ const KEYFRAMES = `
 
   @keyframes ticker {
     from { transform: translateX(100vw); }
-    to   { transform: translateX(-100%); }
+    to   { transform: translateX(-50%); }
   }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -101,9 +101,7 @@ function Ticker() {
   const doubled = [...tickers, ...tickers];
   return (
     <div className="overflow-hidden bg-[#0d1117] border-b border-white/5 h-9 flex items-center">
-      <div
-        className="flex whitespace-nowrap gap-10 animate-ticker"
-        style={{ paddingLeft: "100vw" }}
+      <div className="flex whitespace-nowrap gap-10 animate-ticker"
       >
         {doubled.map((t, i) => (
           <span key={i} className="inline-flex items-center gap-2 text-xs">
@@ -131,7 +129,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen overflow-x:hidden">
+    <div className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen overflow-x-hidden">
 
       {/* ── Live ticker ── */}
       <Ticker />
@@ -142,7 +140,7 @@ export default function Home() {
         {/* Background layers */}
         <div className="absolute inset-0 z-0 hero-bg" />
         <div className="absolute inset-0 z-1 hero-grid pointer-events-none" />
-        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-100 rounded-full z-1 hero-glow pointer-events-none" />
+        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(700px,100vw)] h-[400px] rounded-full z-1 hero-glow pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-3 py-12 flex items-center gap-16 flex-wrap">
 
