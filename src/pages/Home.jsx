@@ -6,8 +6,8 @@ const KEYFRAMES = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
   @keyframes ticker {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from { transform: translateX(100vw); }
+    to   { transform: translateX(-100%); }
   }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -103,7 +103,7 @@ function Ticker() {
     <div className="overflow-hidden bg-[#0d1117] border-b border-white/5 h-9 flex items-center">
       <div
         className="flex whitespace-nowrap gap-10 animate-ticker"
-        style={{ paddingLeft: "100%" }}
+        style={{ paddingLeft: "100vw" }}
       >
         {doubled.map((t, i) => (
           <span key={i} className="inline-flex items-center gap-2 text-xs">
@@ -131,7 +131,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen overflow-x-hidden">
+    <div className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen overflow-x:hidden">
 
       {/* ── Live ticker ── */}
       <Ticker />
@@ -279,7 +279,7 @@ export default function Home() {
                     </div>
 
                     {/* Spread */}
-                    <div className="md-w-18 text-right text-[0.73rem] text-zinc-400 shrink-0">
+                    <div className="md:w-18 text-right text-[0.73rem] text-zinc-400 shrink-0">
                       {b.spread}
                     </div>
 
