@@ -6,6 +6,8 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Guides from "./pages/Guides";
 import Brokers from "./pages/Brokers";
+import Compare from "./pages/Compare";
+import NGNRates from "./pages/NGNRates";
 import Exness from "./components/Exness";
 import JustMarkets from "./components/JustMarkets";
 import HFM from "./components/HFM";
@@ -23,6 +25,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/guides" element={<Guides />} />
         <Route path="/brokers" element={<Brokers />} />
+        <Route path="/compare" element={<Compare />} />
+        <Route path="/ngn-rates" element={<NGNRates />} />
         <Route path="/brokers/exness" element={<Exness />} />
         <Route path="/brokers/justmarkets" element={<JustMarkets />} />
         <Route path="/brokers/hfm" element={<HFM />} />

@@ -10,22 +10,36 @@ const stats = [
 
 const values = [
   {
-    icon: "🔍",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+      </svg>
+    ),
     title: "Rigorous Testing",
     desc: "Every broker we review is hands-on tested with real accounts. We open accounts, make deposits, execute trades, and withdraw funds — just like you would.",
   },
   {
-    icon: "🇳🇬",
+    icon: (
+      <img src="/nigeria.png" alt="Nigeria flag" className="w-5 h-5 object-contain" />
+    ),
     title: "Built for Nigeria",
     desc: "We test specifically for NGN deposit support, Naira withdrawal speed, local payment methods, and how brokers treat Nigerian clients.",
   },
   {
-    icon: "⚖️",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h8m-8 6h18M3 18h8M17 14l2 2 4-4" />
+      </svg>
+    ),
     title: "Unbiased Rankings",
     desc: "Our rankings are never paid for. Brokers cannot buy a higher position. Affiliate commissions we earn do not influence scores or editorial content.",
   },
   {
-    icon: "🔄",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.01M4.01 9A9 9 0 1 0 6.34 5.34" />
+      </svg>
+    ),
     title: "Always Updated",
     desc: "Forex markets change fast. We revisit every broker review regularly to ensure spreads, fees, and regulatory status reflect current conditions.",
   },
@@ -163,7 +177,7 @@ export default function About() {
                 key={i}
                 className="flex flex-col gap-3 p-5 rounded-xl border border-white/6 bg-white/2 hover:border-green-500/20 transition-all duration-200"
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center text-xl bg-green-500/8 border border-green-500/20">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-green-500/8 border border-green-500/20">
                   {v.icon}
                 </div>
                 <div>
