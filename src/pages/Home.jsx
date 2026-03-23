@@ -52,6 +52,11 @@ const KEYFRAMES = `
   .card-shadow {
     box-shadow: 0 32px 64px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(34,197,94,0.06);
   }
+
+  html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 `;
 
 /* ── Data ─────────────────────────────────────────────────────────────────── */
