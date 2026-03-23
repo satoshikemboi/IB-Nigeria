@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#0a0f0c]/95 border-b border-white/6 backdrop-blur-md overflow-hidden">
-      <div className="max-w-full mx-auto px-12 h-16 flex items-center justify-center gap-48">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between gap-4">
 
         {/* ── Logo ── */}
         <Link to="/" className="flex items-center gap-2 no-underline group">
@@ -85,8 +85,9 @@ export default function Navbar() {
       </div>
 
       {/* ── Mobile menu ── */}
-<div className={`md:hidden transition-all duration-300 overflow-hidden ${open ? "max-h-112" : "max-h-0"}`}>
-  <div className="border-t border-white/6 pl-4 py-4 flex flex-col gap-1">
+<div className={`md:hidden transition-all duration-300 overflow-hidden ${open ? "max-h-dvh opacity-100" : "max-h-0 opacity-0"}`}>
+  {/* Added pr-4 to balance the pl-4 and w-full to contain it */}
+  <div className="border-t border-white/6 px-4 py-4 flex flex-col gap-1 w-full box-border">
 
     {links.map(({ label, to }) => {
       const active = pathname === to;
@@ -95,7 +96,7 @@ export default function Navbar() {
           key={to}
           to={to}
           onClick={() => setOpen(false)}
-          className={`flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-all duration-150 no-underline ${
+          className={`flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-all duration-150 no-underline w-full box-border ${
             active
               ? "text-green-400 bg-green-500/10 border border-green-500/20"
               : "text-zinc-400 hover:text-zinc-100 hover:bg-white/5 border border-transparent"
@@ -111,25 +112,26 @@ export default function Navbar() {
     })}
 
     {/* Divider */}
-    <div className="my-2 border-t border-white/6" />
+    <div className="my-2 border-t border-white/6 w-full" />
 
     {/* NGN info row */}
-    <div className="flex items-center justify-between px-4 py-2 text-xs text-zinc-500">
+    <div className="flex items-center justify-between px-4 py-2 text-[0.7rem] text-zinc-500 w-full box-border">
       <span>Currency</span>
       <span className="inline-flex items-center gap-1.5 text-green-400 font-medium">
-        🇳🇬 Nigerian Naira (NGN)
+        🇳🇬 NGN
       </span>
     </div>
 
     {/* CTA */}
-    <Link
-      to="/compare"
-      onClick={() => setOpen(false)}
-      className="mt-1 flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white bg-linear-to-br from-green-600 to-green-700 rounded-lg no-underline hover:shadow-[0_6px_20px_rgba(22,163,74,0.35)] transition-all"
-    >
-      🇳🇬 Compare Nigerian Brokers
-    </Link>
-
+    <div className="px-2"> {/* Added a small wrapper for the button padding */}
+      <Link
+        to="/compare"
+        onClick={() => setOpen(false)}
+        className="mt-1 flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white bg-green-600 rounded-lg no-underline"
+      >
+        Compare Nigerian Brokers
+      </Link>
+    </div>
   </div>
 </div>
     </nav>

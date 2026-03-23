@@ -3,11 +3,17 @@ import { Link } from "react-router-dom";
 
 /* ── Keyframes + fonts (only things Tailwind can't do at runtime) ─────────── */
 const KEYFRAMES = `
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+    
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
   @keyframes ticker {
-    from { transform: translateX(100vw); }
-    to   { transform: translateX(-100%); }
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
   }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -53,10 +59,6 @@ const KEYFRAMES = `
     box-shadow: 0 32px 64px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(34,197,94,0.06);
   }
 
-  html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
 `;
 
 /* ── Data ─────────────────────────────────────────────────────────────────── */
@@ -103,22 +105,36 @@ function Stars({ score }) {
 
 /* ── Ticker ───────────────────────────────────────────────────────────────── */
 function Ticker() {
-  const doubled = [...tickers, ...tickers];
   return (
-    <div className="bg-[#0d1117] border-b border-white/5 h-9 flex items-center"
-      style={{ overflow: "hidden", position: "relative", width: "100%" }}
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "100%",
+        height: "36px",
+        background: "#0d1117",
+        borderBottom: "1px solid rgba(255,255,255,0.05)",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
+        position: "relative",
+      }}
     >
       <div
-        className="flex whitespace-nowrap gap-10 animate-ticker"
-        style={{ position: "absolute", left: 0, willChange: "transform" }}
+        className="animate-ticker"
+        style={{
+          display: "flex",
+          gap: "2.5rem",
+          whiteSpace: "nowrap",
+          willChange: "transform",
+          position: "absolute",
+          left: 0,
+        }}
       >
-        {doubled.map((t, i) => (
-          <span key={i} className="inline-flex items-center gap-2 text-xs">
-            <span className="text-zinc-500 font-medium">{t.pair}</span>
-            <span className="text-zinc-300 font-medium">{t.price}</span>
-            <span className={`font-medium ${t.up ? "text-green-400" : "text-red-400"}`}>
-              {t.change}
-            </span>
+        {[...tickers, ...tickers].map((t, i) => (
+          <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.75rem" }}>
+            <span style={{ color: "#71717a", fontWeight: 500 }}>{t.pair}</span>
+            <span style={{ color: "#d4d4d8", fontWeight: 500 }}>{t.price}</span>
+            <span style={{ fontWeight: 500, color: t.up ? "#4ade80" : "#f87171" }}>{t.change}</span>
           </span>
         ))}
       </div>
@@ -138,10 +154,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ overflowX: "hidden"}} className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen overflow-x-hidden">
+    <div className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen w-full overflow-x-hidden">
 
       {/* ── Live ticker ── */}
-      {/* <Ticker /> */}
+       <Ticker /> 
 
       {/* ── HERO ── */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
