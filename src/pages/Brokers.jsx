@@ -1,14 +1,55 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-/* ── Data ─────────────────────────────────────────────────────────────────── */
 const brokers = [
-  { id: 1, name: "Exness",      logo: "/exness.png",      tag: "Best Overall",      link: "/brokers/exness"      },
-  { id: 2, name: "JustMarkets", logo: "/justmarkets.png", tag: "Best for MT5",      link: "/brokers/justmarkets" },
-  { id: 3, name: "HFM",         logo: "/hfm.png",         tag: "Best Bonuses",      link: "/brokers/hfm"         },
-  { id: 4, name: "FBS",         logo: "/fbs.png",         tag: "Most Trusted",      link: "/brokers/fbs"         },
-  { id: 5, name: "XM Group",    logo: "/xm.png",          tag: "Best for Beginners",link: "/brokers/xm"          },
-  { id: 6, name: "FxPro",       logo: "/fxpro.png",       tag: "Best Spreads",      link: "/brokers/fxpro"       },
+  { 
+    id: 1, 
+    name: "Exness", 
+    logo: "/exness.png", 
+    tag: "Best Overall", 
+    link: "https://www.exnesspromo.com/en/less-slippage/?partner_id=1sh0vxrgqd",
+    description: "Instant withdrawals and NGN accounts with spreads from 0.0 pips."
+  },
+  { 
+    id: 2, 
+    name: "JustMarkets", 
+    logo: "/justmarkets.png", 
+    tag: "Best for MT5", 
+    link: "https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker",
+    description: "High leverage up to 1:3000 and excellent local bank transfer support."
+  },
+  { 
+    id: 3, 
+    name: "HFM", 
+    logo: "/hfm.png", 
+    tag: "Best Bonuses", 
+    link: "https://register.hfm.com/ke/en/new-live-account/?refid=30515020",
+    description: "Physical presence in Lagos and a wide range of account types."
+  },
+  { 
+    id: 4, 
+    name: "FBS", 
+    logo: "/fbs.png", 
+    tag: "Most Trusted", 
+    link: "https://fbs.partners?ibl=876040&ibp=35444511",
+    description: "Great mobile trading app and 100% deposit bonus offers."
+  },
+  { 
+    id: 5, 
+    name: "XM Group", 
+    logo: "/xm.png", 
+    tag: "Best for Beginners", 
+    link: "https://affs.click/MbQNk",
+    description: "World-class education, local seminars, and a $30 No-Deposit bonus."
+  },
+  { 
+    id: 6, 
+    name: "FxPro", 
+    logo: "/fxpro.png", 
+    tag: "Best Spreads", 
+    link: "https://direct-fxpro.com/en/partner/2xPncqjwh",
+    description: "Institutional execution speeds and access to the cTrader platform."
+  },
 ];
 
 const categories = ["All", "Best Overall", "Best for MT5", "Best Bonuses", "Most Trusted", "Best for Beginners", "Best Spreads"];
@@ -16,24 +57,21 @@ const categories = ["All", "Best Overall", "Best for MT5", "Best Bonuses", "Most
 /* ── Broker card ──────────────────────────────────────────────────────────── */
 function BrokerCard({ broker }) {
   return (
-    <Link
-      to={broker.link}
+    <a
+      href={broker.link}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group flex flex-col items-center justify-center gap-4 p-6 rounded-2xl border border-white/6 bg-white/2 hover:border-green-500/30 hover:bg-green-500/4 transition-all duration-200 no-underline"
     >
       {/* Trophy icon */}
       <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/8 border border-green-500/20 group-hover:bg-green-500/[0.14] transition-all duration-200">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6 text-green-400"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-green-400" viewBox="0 0 24 24" fill="currentColor">
           <path d="M11 17.938A8.001 8.001 0 0 1 12 2a8 8 0 0 1 1 15.938V20h3v2H8v-2h3v-2.062zM5 4H3a1 1 0 0 0-1 1v3a4 4 0 0 0 4 4v-2a2 2 0 0 1-2-2V6h1V4zm14 0h-1v2h1v3a2 2 0 0 1-2 2v2a4 4 0 0 0 4-4V5a1 1 0 0 0-1-1z"/>
         </svg>
       </div>
 
-      {/* Logo */}
-      <div className="w-16 h-10 flex items-center justify-center">
+      {/* Logo Area */}
+      <div className="w-20 h-10 flex items-center justify-center relative">
         <img
           src={broker.logo}
           alt={broker.name}
@@ -43,22 +81,21 @@ function BrokerCard({ broker }) {
             e.target.nextSibling.style.display = "flex";
           }}
         />
-        <span
-          className="hidden w-full h-full items-center justify-center text-lg font-bold text-green-400"
-          style={{ display: "none" }}
-        >
-          {broker.name.charAt(0)}
+        <span className="hidden w-full h-full items-center justify-center text-lg font-bold text-green-400">
+          {broker.name}
         </span>
       </div>
 
-      {/* Name */}
+      {/* Info */}
       <div className="text-center">
         <p className="text-sm font-semibold text-zinc-100 group-hover:text-green-400 transition-colors duration-200">
-          {broker.name} Review
+          {broker.name}
         </p>
-        <p className="text-[0.65rem] text-zinc-600 mt-0.5">{broker.tag}</p>
+        <p className="text-[0.65rem] text-zinc-600 mt-0.5 uppercase tracking-wider font-bold">
+          {broker.tag}
+        </p>
       </div>
-    </Link>
+    </a>
   );
 }
 
@@ -87,7 +124,7 @@ export default function Brokers() {
           </h1>
 
           <p className="text-lg text-zinc-300 leading-relaxed max-w-3xl">
-            <span className="text-green-400 font-bold">fxbrokers.ng</span> provides unbiased forex broker reviews and ratings to help Nigerian
+            <span className="text-green-400 font-bold">fxbrokers.ng</span> provides unbiased forex <Link to="/brokers" className="underline">broker reviews</Link> and ratings to help Nigerian
             traders find the best broker for their needs. Our team tests and assesses brokers
             on over 50 variables including NGN deposit support, spreads, regulation, and
             withdrawal speed.
@@ -136,6 +173,36 @@ export default function Brokers() {
         )}
 
       </div>
+      <div className="max-w-6xl mx-auto px-[5vw] py-12 border-t border-white/6">
+  <div className="flex items-center gap-3 mb-8">
+    <div className="w-1 h-6 bg-green-500 rounded-full" />
+    <h2 className="text-xl font-playfair font-semibold text-zinc-50">Direct Sign Up Links</h2>
+  </div>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {[
+      { name: "Exness Nigeria", url: "https://www.exnesspromo.com/en/less-slippage/?partner_id=1sh0vxrgqd", highlight: "Instant Withdrawals" },
+      { name: "JustMarkets Nigeria", url: "https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker", highlight: "1:3000 Leverage" },
+      { name: "HFM Nigeria", url: "https://register.hfm.com/ke/en/new-live-account/?refid=30515020", highlight: "Local Lagos Office" },
+      { name: "FBS Nigeria", url: "https://fbs.partners?ibl=876040&ibp=35444511", highlight: "100% Deposit Bonus" },
+      { name: "XM Nigeria", url: "https://affs.click/MbQNk", highlight: "$30 No-Deposit Bonus" },
+      { name: "FxPro Nigeria", url: "https://direct-fxpro.com/en/partner/2xPncqjwh", highlight: "Raw Spreads" },
+    ].map((item, i) => (
+      <a 
+        key={i}
+        href={item.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="group flex flex-col p-4 rounded-sm border border-white/4 bg-white/2 hover:bg-white/4 hover:border-green-500/20 transition-all no-underline"
+      >
+        <div className="flex justify-between items-center mb-1">
+          <span className="text-sm font-semibold text-zinc-200 underline group-hover:text-green-400">{item.name}</span>
+          <span className="text-[10px] text-green-500/80 group-hover:translate-x-1 transition-transform">↗</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
     </div>
   );
 }

@@ -209,6 +209,38 @@ export default function About() {
             ))}
           </div>
         </section>
+          
+          {/* ── Affiliate Links ── */}
+          <div className="max-w-6xl mx-auto px-[5vw] py-12 border-t border-white/6">
+  <div className="flex items-center gap-3 mb-8">
+    <div className="w-1 h-6 bg-green-500 rounded-full" />
+    <h2 className="text-xl font-playfair font-semibold text-zinc-50">Direct Sign Up Links</h2>
+  </div>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {[
+      { name: "Exness Nigeria", url: "https://www.exnesspromo.com/en/less-slippage/?partner_id=1sh0vxrgqd", highlight: "Instant Withdrawals" },
+      { name: "JustMarkets Nigeria", url: "https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker", highlight: "1:3000 Leverage" },
+      { name: "HFM Nigeria", url: "https://register.hfm.com/ke/en/new-live-account/?refid=30515020", highlight: "Local Lagos Office" },
+      { name: "FBS Nigeria", url: "https://fbs.partners?ibl=876040&ibp=35444511", highlight: "100% Deposit Bonus" },
+      { name: "XM Nigeria", url: "https://affs.click/MbQNk", highlight: "$30 No-Deposit Bonus" },
+      { name: "FxPro Nigeria", url: "https://direct-fxpro.com/en/partner/2xPncqjwh", highlight: "Raw Spreads" },
+    ].map((item, i) => (
+      <a 
+        key={i}
+        href={item.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="group flex flex-col p-4 rounded-sm border border-white/4 bg-white/2 hover:bg-white/4 hover:border-green-500/20 transition-all no-underline"
+      >
+        <div className="flex justify-between items-center mb-1">
+          <span className="text-sm font-semibold text-zinc-200 underline group-hover:text-green-400">{item.name}</span>
+          <span className="text-[10px] text-green-500/80 group-hover:translate-x-1 transition-transform">↗</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
 
         {/* ── Disclosure ── */}
         <section>
