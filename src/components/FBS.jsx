@@ -138,12 +138,6 @@ function SectionTitle({ children }) {
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function FBS() {
   return (
-    <>
-    <SEO
-     title="Best Mobile Trading App & 100% Deposit Bonus"
-     description="Explore FBS Nigeria's 1:3000 leverage and the 'Level Up' bonus. Learn how to trade with the FBS Trader app and deposit using local Nigerian bank transfers."
-     path="/brokers/fbs"
-    />
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
       {/* ── Hero / Overview ── */}
@@ -381,6 +375,5 @@ export default function FBS() {
 
       </div>
     </div>
-    </>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SEO from "../components/SEO";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,12 +16,6 @@ export default function Contact() {
   };
 
   return (
-    <>
-    <SEO
-     title="Contact Us | FxBrokers.ng Support & Broker Inquiries"
-     description="Contact the FxBrokers.ng team. Get expert help with Nigerian forex brokers, report scams, or discuss partnerships. We're here to help Nigerian traders."
-     path="/contact"
-    />
     <div className="min-h-screen bg-[#080c0e] pt-32 pb-20 selection:bg-green-500/30">
       <div className="max-w-6xl mx-auto px-[5vw]">
         
@@ -141,6 +134,5 @@ export default function Contact() {
         </div>
       </div>
     </div>
-    </>
   );
 }

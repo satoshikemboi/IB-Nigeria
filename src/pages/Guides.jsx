@@ -81,7 +81,7 @@ const guides = [
     content: [
       { text: "XM", href: "https://affs.click/MbQNk" },
       " is widely regarded as the best broker for educational resources in the Nigerian market. They frequently host local gala dinners and free trading seminars in cities like Lagos and Abuja. For 2026, they continue to offer a $30 No-Deposit Bonus for new users to test the markets risk-free.",
-      " XM supports leverage up to 1:1000 and features an 'Ultra-Low' account type with no commissions and spreads as low as 0.6 pips. Nigerian traders benefit from zero fees on deposits and withdrawals via local bank transfers and e-wallets like Neteller and Skrill."
+      { text: "XM", href: "https://affs.click/MbQNk"}, " supports leverage up to 1:1000 and features an 'Ultra-Low' account type with no commissions and spreads as low as 0.6 pips. Nigerian traders benefit from zero fees on deposits and withdrawals via local bank transfers and e-wallets like Neteller and Skrill."
     ],
   },
   {
@@ -91,7 +91,8 @@ const guides = [
     content: [
       { text: "FBS", href: "https://fbs.partners?ibl=876040&ibp=35444511" },
       " stands out for offering the highest leverage in the industry, reaching up to 1:3000 on certain account types. This makes it popular for aggressive traders with smaller capital. They provide a very smooth mobile trading app (FBS Trader) which is optimized for the mobile-first Nigerian trading community.",
-      " While their base currencies are limited to USD and EUR, their integration with local exchangers and Nigerian banks ensures that converting your Naira for deposit is fast. They offer a unique 'Level Up' bonus and 100% deposit bonuses that are highly attractive to retail traders."
+      " While their base currencies are limited to USD and EUR, their integration with local exchangers and Nigerian banks ensures that converting your Naira for deposit is fast. They offer a unique 'Level Up' bonus and 100% deposit bonuses that are highly attractive to retail traders. ",
+      { text: "Register today with FBS", href: "https://fbs.partners?ibl=876040&ibp=35444511" },
     ],
   },
   {
@@ -100,7 +101,9 @@ const guides = [
     title: "FxPro Nigeria",
     content: [
       { text: "FxPro", href: "https://direct-fxpro.com/en/partner/2xPncqjwh" },
-      " is considered a premium, 'No Dealing Desk' (NDD) broker. It is often the choice for professional Nigerian traders who require institutional-grade execution speeds and deep liquidity. Unlike many others, FxPro offers the cTrader platform alongside MT4 and MT5.",
+      " is considered a premium, 'No Dealing Desk' (NDD) broker. It is often the choice for professional Nigerian traders who require institutional-grade execution speeds and deep liquidity. Unlike many others, ",
+      { text: "FxPro", href: "https://direct-fxpro.com/en/partner/2xPncqjwh" }, 
+      " offers the cTrader platform alongside MT4 and MT5.",
       " It is one of the most regulated brokers globally (FCA, CySEC, FSCA). While the minimum deposit is slightly higher at $100, the FxPro Wallet allows traders to keep funds in a separate vault and move them instantly into trading accounts when needed. Local payment methods include bank wire and major credit/debit cards."
     ],
   },

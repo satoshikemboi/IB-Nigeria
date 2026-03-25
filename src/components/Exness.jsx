@@ -122,12 +122,6 @@ function SectionTitle({ children }) {
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function Exness() {
   return (
-    <>
-    <SEO
-      title="Exness Nigeria Review: Instant Withdrawals & NGN Accounts"
-      description="Is Exness the best broker for Nigerians? Read our 2026 deep-dive into fees, leverage, and local deposit methods."
-      path="/brokers/exness"
-    />
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
       {/* ── Hero / Overview ── */}
@@ -364,6 +358,5 @@ export default function Exness() {
 
       </div>
     </div>
-    </>
   );
 }

@@ -94,7 +94,7 @@ export default function Navbar() {
       {/* ── Mobile menu ── */}
       <div 
         className={`md:hidden transition-all duration-300 overflow-hidden ${open ? "max-h-dvh opacity-100" : "max-h-0 opacity-0"}`}
-        aria-hidden={!open}
+        inert={!open ? true : undefined}
       >
         <div className="border-t border-white/6 px-4 py-4 flex flex-col gap-1 w-full box-border">
           {links.map(({ label, to, title }) => {

@@ -7,7 +7,7 @@ const brokers = [
     name: "Exness", 
     logo: "/exness.png", 
     tag: "Best Overall", 
-    link: "https://www.exnesspromo.com/en/less-slippage/?partner_id=1sh0vxrgqd",
+    path: "/brokers/exness",
     description: "Instant withdrawals and NGN accounts with spreads from 0.0 pips."
   },
   { 
@@ -15,7 +15,7 @@ const brokers = [
     name: "JustMarkets", 
     logo: "/justmarkets.png", 
     tag: "Best for MT5", 
-    link: "https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker",
+    path: "/brokers/justmarkets",
     description: "High leverage up to 1:3000 and excellent local bank transfer support."
   },
   { 
@@ -23,7 +23,7 @@ const brokers = [
     name: "HFM", 
     logo: "/hfm.png", 
     tag: "Best Bonuses", 
-    link: "https://register.hfm.com/ke/en/new-live-account/?refid=30515020",
+    path: "/brokers/hfm",
     description: "Physical presence in Lagos and a wide range of account types."
   },
   { 
@@ -31,7 +31,7 @@ const brokers = [
     name: "FBS", 
     logo: "/fbs.png", 
     tag: "Most Trusted", 
-    link: "https://fbs.partners?ibl=876040&ibp=35444511",
+    path: "/brokers/fbs",
     description: "Great mobile trading app and 100% deposit bonus offers."
   },
   { 
@@ -39,7 +39,7 @@ const brokers = [
     name: "XM Group", 
     logo: "/xm.png", 
     tag: "Best for Beginners", 
-    link: "https://affs.click/MbQNk",
+    path: "/brokers/xm",
     description: "World-class education, local seminars, and a $30 No-Deposit bonus."
   },
   { 
@@ -47,7 +47,7 @@ const brokers = [
     name: "FxPro", 
     logo: "/fxpro.png", 
     tag: "Best Spreads", 
-    link: "https://direct-fxpro.com/en/partner/2xPncqjwh",
+    path: "/brokers/fxpro",
     description: "Institutional execution speeds and access to the cTrader platform."
   },
 ];
@@ -58,9 +58,7 @@ const categories = ["All", "Best Overall", "Best for MT5", "Best Bonuses", "Most
 function BrokerCard({ broker }) {
   return (
     <a
-      href={broker.link}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={broker.path}
       className="group flex flex-col items-center justify-center gap-4 p-6 rounded-2xl border border-white/6 bg-white/2 hover:border-green-500/30 hover:bg-green-500/4 transition-all duration-200 no-underline"
     >
       {/* Trophy icon */}

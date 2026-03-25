@@ -127,12 +127,6 @@ function SectionTitle({ children }) {
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function XM() {
   return (
-    <>
-    <SEO
-     title="XM Nigeria Review 2026: Get $30 No-Deposit Bonus & Free Seminars"
-     description="XM is the top choice for Nigerian beginners. Find out how to claim your $30 bonus, attend local XM seminars in Lagos, and trade with zero-requisition execution."
-     path="/brokers/xm"
-    />
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
       {/* ── Hero / Overview ── */}
@@ -370,6 +364,5 @@ export default function XM() {
 
       </div>
     </div>
-    </>
   );
 }
