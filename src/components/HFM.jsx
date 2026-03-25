@@ -128,6 +128,12 @@ function SectionTitle({ children }) {
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function HFM() {
   return (
+    <>
+    <SEO
+     title="HFM Nigeria Review 2026: Local Lagos Office & NGN Base Accounts"
+     description="Trade with HFM (formerly HotForex), a household name in Nigeria. Features include a physical office in Lagos, NGN-denominated accounts, and ultra-fast local bank deposits."
+     path="/brokers/hfm"
+    />
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
       {/* ── Hero / Overview ── */}
@@ -360,5 +366,6 @@ export default function HFM() {
 
       </div>
     </div>
+    </>
   );
 }

@@ -154,6 +154,13 @@ export default function Home() {
   }, []);
 
   return (
+    <>
+    <SEO
+     title="Best Forex Brokers in Nigeria 2026 | fxbrokers.ng Review Hub"
+     description="Compare the top-rated Forex brokers in Nigeria. Expert reviews on Exness, HFM, and XM. Find NGN-denominated accounts, 1:3000 leverage, and instant Naira withdrawals."
+     path="/"
+     type="website"
+    />
     <div className="font-dm bg-[#080c0e] text-zinc-300 min-h-screen w-full overflow-x-hidden">
 
       {/* ── Live ticker ── */}
@@ -352,5 +359,6 @@ export default function Home() {
       </div>
 
     </div>
+    </>
   );
 }

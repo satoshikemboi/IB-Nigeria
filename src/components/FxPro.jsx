@@ -126,6 +126,12 @@ function SectionTitle({ children }) {
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function FxPro() {
   return (
+    <>
+    <SEO
+     title="FxPro Nigeria Review: Professional cTrader & Institutional Spreads"
+     description="The expert's choice. Our FxPro 2026 review covers their NDD (No Dealing Desk) execution, the FxPro Wallet for Nigerians, and trading on MT4, MT5, and cTrader."
+     path="/brokers/fxpro"
+    />
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
       {/* ── Hero / Overview ── */}
@@ -364,5 +370,6 @@ export default function FxPro() {
 
       </div>
     </div>
+    </>
   );
 }

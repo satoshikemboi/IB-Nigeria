@@ -117,6 +117,12 @@ function SectionTitle({ children }) {
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function JustMarkets() {
   return (
+    <>
+    <SEO
+     title="JustMarkets Nigeria Review 2026: 1:3000 Leverage & NGN Accounts"
+     descriptio="Is JustMarkets the best for MT5 in Nigeria? Read our 2026 review on JustMarkets spreads, $1 minimum deposit, and seamless Naira withdrawals via Opay & Flutterwave."
+     path="/brokers/justmarkets"
+    />
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
       {/* ── Hero / Overview ── */}
@@ -352,5 +358,6 @@ export default function JustMarkets() {
 
       </div>
     </div>
+    </>
   );
 }

@@ -25,7 +25,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-zinc-400 leading-relaxed text-balance">
-              Providing Nigerian traders with independent, data-backed forex broker reviews and local market insights since 2024.
+            fxbrokers.ng provides independent analysis of the best forex brokers in Nigeria. Our mission is to ensure transparency in the NGN trading market by reviewing spreads, regulation, and local bank transfer speeds.
             </p>
             <address className="mt-4 not-italic text-xs text-zinc-500 flex flex-col gap-1">
               <span>Lagos, Nigeria</span>
