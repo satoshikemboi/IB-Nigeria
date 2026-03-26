@@ -194,6 +194,28 @@ export default function HFM() {
             </div>
           </div>
         </div>
+        <div className="w-full flex justify-center my-8 px-4">
+  <div className="relative overflow-hidden rounded-sm border border-white/10 hover:border-green-500/30 transition-all duration-300 shadow-2xl">
+    <a 
+      href="https://banner-api.hfm.com/link/0bdeda68?regulator=HFKE&refid=30515020" 
+      target="_blank" 
+      rel="noopener noreferrer sponsored"
+      className="block"
+    >
+      <img 
+        src="https://banner-api.hfm.com/banner/0bdeda68?regulator=HFKE&refid=30515020" 
+        alt="Trade with HFM"
+        className="max-w-full h-auto block" 
+        width="728" 
+        height="90"
+      />
+      {/* 2026 Disclosure Overlay (Small) */}
+      <span className="absolute bottom-0 right-0 bg-black/60 text-[10px] text-zinc-400 px-1 rounded-tl">
+        Ad
+      </span>
+    </a>
+  </div>
+</div>
       </div>
 
       <div className="max-w-4xl mx-auto px-[5vw] py-12 flex flex-col gap-14">
@@ -338,6 +360,28 @@ export default function HFM() {
             in segregated accounts, and the broker is a member of the Financial Commission, providing
             additional dispute resolution protection of up to €20,000 per complaint.
           </div>
+          <div className="w-full flex justify-center my-8 px-2">
+  <div className="relative overflow-hidden border border-white/10 hover:border-green-500/30 transition-all duration-300 shadow-2xl">
+    <a 
+      href="https://banner-api.hfm.com/link/0bdeda68?regulator=HFKE&refid=30515020" 
+      target="_blank" 
+      rel="noopener noreferrer sponsored"
+      className="block"
+    >
+      <img 
+        src="https://banner-api.hfm.com/banner/0bdeda68?regulator=HFKE&refid=30515020" 
+        alt="Trade with HFM"
+        className="max-w-full h-auto block" 
+        width="728" 
+        height="90"
+      />
+      {/* 2026 Disclosure Overlay (Small) */}
+      <span className="absolute bottom-0 right-0 bg-black/60 text-[10px] text-zinc-400 px-1 rounded-tl">
+        Ad
+      </span>
+    </a>
+  </div>
+</div>
         </section>
 
         {/* ── Bottom CTA ── */}

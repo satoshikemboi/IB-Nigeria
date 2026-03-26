@@ -183,6 +183,23 @@ export default function JustMarkets() {
             </div>
           </div>
         </div>
+        <div className="mt-6 md:mt-8 md:px-4 flex justify-center">
+  <a 
+    href="https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker?promo=5040"
+    target="_blank" 
+    rel="noopener noreferrer sponsored"
+    className="group block w-full max-w-5xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-300 hover:border-blue-500/30"
+  >
+    <img 
+      src="https://justmarkets.com/uploads/promo_materials/jm-banner-global-trusted-broker-en-1200x628.png"
+      alt="JustMarkets - Global Trusted Broker" 
+      width="1200" 
+      height="628" 
+      className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.01]"
+      loading="lazy"
+    />
+  </a>
+</div>
       </div>
 
       <div className="max-w-4xl mx-auto px-[5vw] py-12 flex flex-col gap-14">
@@ -351,6 +368,31 @@ export default function JustMarkets() {
         </div>
 
       </div>
+      <div className="flex justify-center items-center md:my-12 px-2">
+  <a 
+    href="https://one.justmarkets.link/a/17thm0lpq8/?promo=4005"
+    target="_blank"
+    rel="noopener noreferrer sponsored"
+    className="group relative block w-full max-w-3xl overflow-hidden border border-white/10 bg-white/2 transition-all hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+  >
+    {/* Banner Image */}
+    <img 
+      src="https://justmarkets.com/uploads/promo_materials/jm-1200x628-leverage-3000-en.png" 
+      alt="JustMarkets - 1:3000 Leverage"
+      width="1200"
+      height="628"
+      className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.03]"
+      loading="lazy"
+    />
+
+    {/* Subtle Glassmorphism Overlay Label */}
+    <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
+      <p className="text-[9px] uppercase tracking-widest text-zinc-400 font-bold">
+        JustMarkets Official Partner
+      </p>
+    </div>
+  </a>
+</div>
     </div>
   );
 }

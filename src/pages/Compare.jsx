@@ -139,9 +139,9 @@ function ComparisonPanel({ matchup }) {
       {/* Broker header cards */}
       <div className="grid grid-cols-2 gap-4">
         {[A, B].map((broker, i) => (
-          <div key={broker.id} className={`flex flex-col items-center gap-3 p-5 rounded-lg border ${i === 0 ? "border-green-500/25 bg-green-500/3" : "border-blue-500/25 bg-blue-500/3"}`}>
+          <div key={broker.id} className={`flex flex-col items-center gap-3 p-5 rounded-sm border ${i === 0 ? "border-green-500/25 bg-green-500/3" : "border-blue-500/25 bg-blue-500/3"}`}>
             <div className="">
-                 <BrokerLogo broker={broker} size="lg" />
+                 <BrokerLogo broker={broker} size="s" />
             </div>
             <div className="text-center">
               <div className="text-sm font-semibold text-zinc-100">{broker.name}</div>
@@ -154,7 +154,7 @@ function ComparisonPanel({ matchup }) {
               href={broker.link}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className={`w-full text-center text-md font-semibold py-2.5 rounded-sm text-white no-underline hover:-translate-y-0.5 transition-all duration-200 ${i === 0 ? "bg-linear-to-br from-green-600 to-green-700" : "bg-linear-to-br from-blue-600 to-blue-700"}`}
+              className={`w-full text-center text-md font-semibold py-2 rounded-sm text-white no-underline hover:-translate-y-0.5 transition-all duration-200 ${i === 0 ? "bg-linear-to-br from-green-600 to-green-700" : "bg-linear-to-br from-blue-600 to-blue-700"}`}
             >
               Visit Site
             </a>

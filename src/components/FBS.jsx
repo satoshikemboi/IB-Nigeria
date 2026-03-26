@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import SEO from "./SEO";
 
 /* ── Data ─────────────────────────────────────────────────────────────────── */
 const broker = {
@@ -372,7 +371,6 @@ export default function FBS() {
             Affiliate disclosure: We may earn a commission if you open an account via our link. This does not affect our ratings.
           </p>
         </div>
-
       </div>
     </div>
   );

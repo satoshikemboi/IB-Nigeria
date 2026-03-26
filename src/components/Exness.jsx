@@ -188,6 +188,26 @@ export default function Exness() {
             </div>
           </div>
         </div>
+        <div className="flex justify-center items-center my-10 px-4">
+  <a 
+    href="https://one.exnessonelink.com/intl/en/a/1sh0vxrgqd"
+    target="_blank"
+    rel="noopener noreferrer sponsored"
+    className="group block overflow-hidden rounded-xl border border-white/10 bg-[#0d1117] shadow-2xl transition-all hover:border-yellow-500/30"
+  >
+    <img 
+      src="https://d3dpet1g0ty5ed.cloudfront.net/EN_Take_control_1200x628.png" 
+      alt="Exness - Take Control"
+      className="w-full h-auto max-w-3xl transform transition-transform duration-500 group-hover:scale-[1.02]"
+      loading="lazy"
+    />
+    {/* Optional: Tiny label to keep it looking professional */}
+    <div className="py-2 px-4 border-t border-white/5 flex justify-between items-center bg-black/20">
+      <span className="text-[10px] uppercase tracking-widest text-zinc-600 font-bold">Partner Offer</span>
+      <span className="text-[10px] text-zinc-500">Exness Global Limited</span>
+    </div>
+  </a>
+</div>
       </div>
 
       <div className="max-w-4xl mx-auto px-[5vw] py-12 flex flex-col gap-14">
@@ -355,8 +375,22 @@ export default function Exness() {
             Affiliate disclosure: We may earn a commission if you open an account via our link. This does not affect our ratings.
           </p>
         </div>
-
       </div>
+      <div className="flex justify-center items-center py-10 px-4">
+  <a 
+    href="https://one.exnessonelink.com/intl/en/a/1sh0vxrgqd"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block transition-transform hover:scale-[1.01] duration-300"
+  >
+    <img 
+      src="https://d3dpet1g0ty5ed.cloudfront.net/EN_Take_control_800x800.png" 
+      alt="Exness - Take Control"
+      className="w-full max-w-125 h-auto rounded-2xl shadow-2xl border border-white/10"
+      loading="lazy"
+    />
+  </a>
+</div>
     </div>
   );
 }

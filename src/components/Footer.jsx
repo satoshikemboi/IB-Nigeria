@@ -72,11 +72,12 @@ export default function Footer() {
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-100 mb-6">Direct Links</h3>
             <ul className="space-y-2 text-sm text-zinc-400">
-              <li><a href="https://www.exnesspromo.com/..." rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">Open Exness Account</a></li>
-              <li><a href="https://one.justmarkets.link/..." rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">Trade with JustMarkets</a></li>
-              <li><a href="https://register.hfm.com/..." rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">HFM Live Account</a></li>
-              <li><a href="https://affs.click/..." rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">XM $30 Bonus</a></li>
-              <li><a href="https://fbs.partners/..." rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">FBS Nigeria Login</a></li>
+              <li><a href="https://one.exnessonelink.com/a/1sh0vxrgqd" rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">Open Exness Account</a></li>
+              <li><a href="https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker" rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">Trade with JustMarkets</a></li>
+              <li><a href="https://register.hfm.com/ke/en/new-live-account/?refid=30515020" rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">HFM Live Account</a></li>
+              <li><a href="https://affs.click/MbQNk" rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">XM $30 Bonus</a></li>
+              <li><a href="https://fbs.partners?ibl=876040&ibp=35444511" rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">FBS Nigeria</a></li>
+              <li><a href="https://direct-fxpro.com/en/partner/2xPncqjwh" rel="nofollow noopener noreferrer" target="_blank" className="hover:text-green-400 transition-colors">Register FxPro</a></li>
             </ul>
           </div>
         </div>
