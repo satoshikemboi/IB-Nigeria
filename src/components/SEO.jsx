@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 
 export default function SEO({ title, description, path, type = "website" }) {
-  const siteName = "fxbrokers.ng";
+  const siteName = "fxbrokers.com.ng";
   const fullTitle = `${title} | ${siteName}`;
-  const url = `https://fxbrokers.ng${path || ""}`;
+  const url = `https://fxbrokers.com.ng${path || ""}`;
 
   // 1. Logic for Review vs Organization Schema
   const mainSchema = type === "review" ? {
@@ -12,7 +12,7 @@ export default function SEO({ title, description, path, type = "website" }) {
     "itemReviewed": {
       "@type": "FinancialService",
       "name": title.split(' ')[0], 
-      "image": "https://fxbrokers.ng/logo.png"
+      "image": "https://fxbrokers.com.ng/logo.png"
     },
     "reviewRating": {
       "@type": "Rating",
@@ -24,8 +24,8 @@ export default function SEO({ title, description, path, type = "website" }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": siteName,
-    "url": "https://fxbrokers.ng",
-    "logo": "https://fxbrokers.ng/logo.png"
+    "url": "https://fxbrokers.com.ng",
+    "logo": "https://fxbrokers.com.ng/logo.png"
   };
 
   // 2. Logic for Breadcrumb Schema (The "Yes" request)
@@ -38,13 +38,13 @@ export default function SEO({ title, description, path, type = "website" }) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://fxbrokers.ng"
+        "item": "https://fxbrokers.com.ng"
       },
       ...pathSegments.map((segment, index) => ({
         "@type": "ListItem",
         "position": index + 2,
         "name": segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
-        "item": `https://fxbrokers.ng/${pathSegments.slice(0, index + 1).join('/')}`
+        "item": `https://fxbrokers.com.ng/${pathSegments.slice(0, index + 1).join('/')}`
       }))
     ]
   };
