@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import FBSHero from "./FBSHero";
 
 /* ── Data ─────────────────────────────────────────────────────────────────── */
 const broker = {
@@ -116,15 +116,6 @@ const tierColor = {
 };
 
 /* ── Helpers ──────────────────────────────────────────────────────────────── */
-function Stars({ score }) {
-  const filled = Math.round((parseFloat(score) / 10) * 5);
-  return (
-    <span className="text-amber-400 text-base tracking-wide">
-      {"★".repeat(filled)}{"☆".repeat(5 - filled)}
-    </span>
-  );
-}
-
 function SectionTitle({ children }) {
   return (
     <div className="mb-6">
@@ -139,71 +130,7 @@ export default function FBS() {
   return (
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
-      {/* ── Hero / Overview ── */}
-      <div className="border-b border-white/6 bg-[#0d1117]">
-        <div className="max-w-4xl mx-auto px-[5vw] py-12">
-
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-[0.7rem] text-zinc-600 mb-6">
-            <Link to="/" className="hover:text-zinc-400 transition-colors no-underline">Home</Link>
-            <span>›</span>
-            <Link to="/brokers" className="hover:text-zinc-400 transition-colors no-underline">Brokers</Link>
-            <span>›</span>
-            <span className="text-zinc-400">FBS</span>
-          </div>
-
-          <div className="flex items-start gap-6 flex-wrap">
-
-            {/* Logo */}
-            <div className="w-20 h-20 rounded-2xl flex items-center justify-center bg-white/4 border border-white/8 shrink-0 overflow-hidden">
-              <img
-                src={broker.logo}
-                alt={broker.name}
-                className="w-full h-full object-contain p-2"
-                onError={(e) => {
-                  e.target.style.display = "none";
-                  e.target.parentElement.innerHTML = `<span style="font-size:1.8rem;font-weight:700;color:#4ade80">F</span>`;
-                }}
-              />
-            </div>
-
-            {/* Info */}
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-3 flex-wrap mb-2">
-                <h1 className="font-playfair text-[clamp(1.6rem,3vw,2.4rem)] font-semibold text-zinc-50">
-                  FBS Review
-                </h1>
-                <span className="text-[0.62rem] font-bold px-2.5 py-0.5 rounded-full bg-linear-to-r from-green-700 to-green-500 text-white tracking-wide">
-                  Most Trusted
-                </span>
-              </div>
-
-              <Stars score={broker.score} />
-
-              <div className="flex items-center gap-1.5 mt-1 mb-4">
-                <span className="text-2xl font-bold text-green-400">{broker.score}</span>
-                <span className="text-zinc-600 text-sm">/10</span>
-                <span className="text-zinc-600 text-xs ml-1">— Overall score</span>
-              </div>
-
-              <div className="flex flex-wrap gap-x-6 gap-y-1 text-[0.78rem] text-zinc-500 mb-5">
-                <span>Founded: <span className="text-zinc-300">{broker.founded}</span></span>
-                <span>HQ: <span className="text-zinc-300">{broker.headquarters}</span></span>
-                <span>Regulated by: <span className="text-zinc-300">{broker.regulation.join(", ")}</span></span>
-              </div>
-
-              <a
-                href={broker.affiliateLink}
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-br from-green-600 to-green-700 text-white text-sm font-semibold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
-              >
-                Visit FBS 
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FBSHero broker={broker} />
 
       <div className="max-w-4xl mx-auto px-[5vw] py-12 flex flex-col gap-14">
 

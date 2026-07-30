@@ -171,12 +171,6 @@ export default function Home() {
           {/* ── LEFT: headline + CTA ── */}
           <div className="flex-1 basis-96 animate-fade-up">
 
-            {/* Trust pill */}
-            <div className="inline-flex items-center gap-2 text-[0.7rem] text-green-400 tracking-wide border border-green-500/25 bg-green-500/6 px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot" />
-              Nigeria's #1 Independent Forex Resource
-            </div>
-
             {/* Headline */}
             <h1 className="font-playfair text-[clamp(2.1rem,4.2vw,3.6rem)] font-semibold leading-[1.18] tracking-tight text-zinc-50 mb-5">
               Find the{" "}
@@ -194,23 +188,23 @@ export default function Home() {
             </p>
 
             {/* CTAs */}
-            <div className="flex gap-3 flex-wrap mb-9">
-              <a
-                href="/compare"
-                className="inline-flex items-center gap-2 px-7 py-2 md:py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-[0.95rem] font-medium rounded-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(22,163,74,0.4)] no-underline"
-              >
-                Compare brokers ↗
-              </a>
+            <div className="flex gap-3 flex-wrap mb-2">
               <a
                 href="/brokers"
+                className="inline-flex items-center gap-2 px-7 py-2 md:py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-[0.95rem] font-medium rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(22,163,74,0.4)] no-underline"
+              >
+                View all Brokers ↗
+              </a>
+              <a
+                href="/compare"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-transparent text-zinc-400 text-[0.95rem] border border-white/10 rounded-md transition-all duration-200 hover:border-white/30 hover:text-white no-underline"
               >
-                View all rankings
+                Compare Brokers
               </a>
             </div>
 
             {/* Stats */}
-            <div className="flex gap-9 flex-wrap pt-7 border-t border-white/[0.07] animate-fade-up-d2">
+            <div className="hidden gap-9 flex-wrap pt-7 border-t border-white/[0.07] animate-fade-up-d2">
               {stats.map((st, i) => (
                 <div key={i} className="flex flex-col gap-0.5">
                   <span className="font-playfair text-[1.75rem] font-semibold text-green-400 leading-none">

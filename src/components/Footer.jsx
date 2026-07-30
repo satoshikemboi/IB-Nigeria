@@ -15,11 +15,7 @@ export default function Footer() {
           {/* Column 1: Brand & Identity */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 no-underline group" aria-label="fxbrokers.ng Home">
-              <span className="flex pr-1" aria-hidden="true">
-                <span className="block w-3 h-6 bg-green-600" />
-                <span className="block w-3 h-6 bg-white" />
-                <span className="block w-3 h-6 bg-green-600" />
-              </span>
+            <img src="/logo.png" alt="fxbrokers.ng Logo" className="w-10 h-10 object-contain rounded-full bg-white/5 border border-white/10" />
               <span className="font-serif text-[1.18rem] font-semibold tracking-tight text-zinc-50 group-hover:text-green-400 transition-colors">
                 fx<span className="text-green-400">brokers</span><span className="text-zinc-500">.ng</span>
               </span>

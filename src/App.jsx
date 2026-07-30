@@ -26,7 +26,7 @@ import Exness from "./exness/Exness";
 import JustMarkets from "./components/JustMarkets";
 import HFM from "./components/HFM";
 import XM from "./components/XM";
-import FBS from "./components/FBS";
+import FBS from "./FBS/FBS";
 import FxPro from "./components/FxPro";
 
 /**
