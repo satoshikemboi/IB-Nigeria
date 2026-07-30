@@ -19,9 +19,10 @@ import Guides from "./pages/Guides";
 import Brokers from "./pages/Brokers";
 import Compare from "./pages/Compare";
 import NGNRates from "./pages/NGNRates";
+import Kemboi from "./components/Kemboi";
 
 // Individual Broker Review Pages
-import Exness from "./components/Exness";
+import Exness from "./exness/Exness";
 import JustMarkets from "./components/JustMarkets";
 import HFM from "./components/HFM";
 import XM from "./components/XM";
@@ -68,6 +69,7 @@ export default function App() {
               <Route path="/brokers" element={<Brokers />} />
               <Route path="/compare" element={<Compare />} />
               <Route path="/ngn-rates" element={<NGNRates />} />
+              <Route path="/felix-kemboi" element={<Kemboi />} />
 
               {/* Broker Detail Reviews */}
               <Route path="/brokers/exness" element={<Exness />} />
