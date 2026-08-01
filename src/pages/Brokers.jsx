@@ -178,7 +178,7 @@ export default function Brokers() {
 
       {/* ── Page header ── */}
       <div className="border-b border-white/6 bg-[#0d1117]">
-        <div className="max-w-6xl mx-auto px-[5vw] py-8">
+        <div className="max-w-6xl mx-auto px-[5vw] py-4">
 
           <h1 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-semibold text-zinc-50 leading-tight mb-3">
             Broker Reviews
@@ -193,7 +193,7 @@ export default function Brokers() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-[5vw] py-10">
+      <div className="max-w-6xl mx-auto px-[5vw] py-8">
 
         {/* ── Section title ── */}
         <div className="mb-8">
