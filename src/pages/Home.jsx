@@ -191,13 +191,14 @@ export default function Home() {
             <div className="flex gap-3 flex-wrap mb-2">
               <a
                 href="/brokers"
-                className="inline-flex items-center gap-2 px-7 py-2 md:py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-[0.95rem] font-medium rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(22,163,74,0.4)] no-underline"
+                className="inline-flex items-center gap-2 px-4 py-2.5 md:py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-[0.95rem] font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(22,163,74,0.4)] no-underline"
               >
-                View all Brokers ↗
+                View all Brokers
+                <span className="text-md font-bold">→</span>
               </a>
               <a
                 href="/compare"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-transparent text-zinc-400 text-[0.95rem] border border-white/10 rounded-md transition-all duration-200 hover:border-white/30 hover:text-white no-underline"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-transparent text-zinc-400 text-[0.95rem] border border-white/10 rounded-md transition-all duration-200 hover:border-white/30 hover:text-white no-underline"
               >
                 Compare Brokers
               </a>
@@ -286,12 +287,6 @@ export default function Home() {
                       </div>
                       <div className="text-[0.62rem] text-zinc-600 mb-0.5">{b.reg}</div>
                       <Stars score={b.score} />
-                    </div>
-
-                    {/* Score */}
-                    <div className="w-14 text-right shrink-0">
-                      <span className="text-[0.92rem] font-semibold text-green-400">{b.score}</span>
-                      <span className="text-[0.62rem] text-zinc-600">/10</span>
                     </div>
 
                     {/* Spread */}

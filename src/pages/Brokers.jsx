@@ -2,92 +2,166 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const brokers = [
-  { 
-    id: 1, 
-    name: "Exness", 
-    logo: "/exness.png", 
-    tag: "Best Overall", 
+  {
+    id: 1,
+    name: "Exness",
+    logo: "/exness.png",
+    tag: "Best Overall",
     path: "/brokers/exness",
-    description: "Instant withdrawals and NGN accounts with spreads from 0.0 pips."
+    description: "Instant withdrawals and NGN accounts with spreads from 0.0 pips.",
+    signupUrl: "https://www.exnesspromo.com/en/less-slippage/?partner_id=1sh0vxrgqd",
   },
-  { 
-    id: 2, 
-    name: "JustMarkets", 
-    logo: "/justmarkets.png", 
-    tag: "Best for MT5", 
+  {
+    id: 2,
+    name: "JustMarkets",
+    logo: "/justmarkets.png",
+    tag: "Best for MT5",
     path: "/brokers/justmarkets",
-    description: "High leverage up to 1:3000 and excellent local bank transfer support."
+    description: "High leverage up to 1:3000 and excellent local bank transfer support.",
+    signupUrl: "https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker",
   },
-  { 
-    id: 3, 
-    name: "HFM", 
-    logo: "/hfm.png", 
-    tag: "Best Bonuses", 
+  {
+    id: 3,
+    name: "HFM",
+    logo: "/hfm.png",
+    tag: "Best Bonuses",
     path: "/brokers/hfm",
-    description: "Physical presence in Lagos and a wide range of account types."
+    description: "Physical presence in Lagos and a wide range of account types.",
+    signupUrl: "https://register.hfm.com/ke/en/new-live-account/?refid=30515020",
   },
-  { 
-    id: 4, 
-    name: "FBS", 
-    logo: "/fbs.png", 
-    tag: "Most Trusted", 
+  {
+    id: 4,
+    name: "FBS",
+    logo: "/fbs.png",
+    tag: "Most Trusted",
     path: "/brokers/fbs",
-    description: "Great mobile trading app and 100% deposit bonus offers."
+    description: "Great mobile trading app and 100% deposit bonus offers.",
+    signupUrl: "https://fbs.partners?ibl=876040&ibp=35444511",
   },
-  { 
-    id: 5, 
-    name: "XM Group", 
-    logo: "/xm.png", 
-    tag: "Best for Beginners", 
+  {
+    id: 5,
+    name: "XM Group",
+    logo: "/xm.png",
+    tag: "Best for Beginners",
     path: "/brokers/xm",
-    description: "World-class education, local seminars, and a $30 No-Deposit bonus."
+    description: "World-class education, local seminars, and a $30 No-Deposit bonus.",
+    signupUrl: "https://affs.click/MbQNk",
   },
-  { 
-    id: 6, 
-    name: "FxPro", 
-    logo: "/fxpro.png", 
-    tag: "Best Spreads", 
+  {
+    id: 6,
+    name: "FxPro",
+    logo: "/fxpro.png",
+    tag: "Best Spreads",
     path: "/brokers/fxpro",
-    description: "Institutional execution speeds and access to the cTrader platform."
+    description: "Institutional execution speeds and access to the cTrader platform.",
+    signupUrl: "https://direct-fxpro.com/en/partner/2xPncqjwh",
   },
 ];
 
 const categories = ["All", "Best Overall", "Best for MT5", "Best Bonuses", "Most Trusted", "Best for Beginners", "Best Spreads"];
 
-/* ── Broker card ──────────────────────────────────────────────────────────── */
-function BrokerCard({ broker }) {
+/* ── Broker list item ─────────────────────────────────────────────────────── */
+function BrokerListItem({ broker, rank }) {
   return (
-    <a
-      href={broker.path}
-      className="group flex flex-col items-center justify-center gap-4 p-6 rounded-2xl border border-white/6 bg-white/2 hover:border-green-500/30 hover:bg-green-500/4 transition-all duration-200 no-underline"
-    >
+    <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-5 rounded-xl border border-white/6 bg-white/2 hover:border-green-500/25 hover:bg-green-500/4 transition-all duration-200">
 
-      {/* Logo Area */}
-      <div className="w-full h-full flex items-center justify-center relative">
-        <img
-          src={broker.logo}
-          alt={broker.name}
-          className="max-w-full max-h-full object-contain"
-          onError={(e) => {
-            e.target.style.display = "none";
-            e.target.nextSibling.style.display = "flex";
-          }}
-        />
-        <span className="hidden w-full h-full items-center justify-center text-lg font-bold text-green-400">
-          {broker.name}
+      {/* Rank + Logo + Name/Tag/Description */}
+      <div className="flex items-center gap-4 flex-1 min-w-0">
+        <span className="shrink-0 w-7 h-7 flex items-center justify-center rounded-full bg-white/4 border border-white/8 text-[0.7rem] font-bold text-zinc-500">
+          {rank}
         </span>
+
+        <div className="w-12 h-12 rounded-xl bg-white/4 border border-white/8 flex items-center justify-center overflow-hidden shrink-0">
+          <img
+            src={broker.logo}
+            alt={broker.name}
+            className="w-full h-full object-contain"
+            onError={(e) => {
+              e.target.style.display = "none";
+              e.target.parentElement.innerHTML = `<span class="text-xs font-bold text-green-400">${broker.name.charAt(0)}</span>`;
+            }}
+          />
+        </div>
+
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            <p className="text-sm font-semibold text-zinc-100">{broker.name}</p>
+            <span className="text-[0.5rem] font-semibold px-2 text-green-400 tracking-wide whitespace-nowrap">
+              {broker.tag}
+            </span>
+          </div>
+          <p className="text-xs text-zinc-500 mt-1 leading-relaxed">{broker.description}</p>
+        </div>
       </div>
 
-      {/* Info */}
-      <div className="flex flex-col ">
-        <p className="text-sm font-semibold text-zinc-100 group-hover:text-green-400 transition-colors duration-200">
-          {broker.name}
-        </p>
-        <p className="text-[0.65rem] text-zinc-600 mt-0.5 uppercase tracking-wider font-bold">
-          {broker.tag}
-        </p>
+      {/* Actions */}
+      <div className="flex gap-2 shrink-0">
+        <Link
+          to={broker.path}
+          className="flex-1 sm:flex-none text-center px-4 py-2 rounded-lg border border-white/10 text-xs font-semibold text-zinc-300 no-underline hover:border-green-500/30 hover:text-green-400 transition-colors duration-200 whitespace-nowrap"
+        >
+          Read Review
+        </Link>
+        <a
+          href={broker.signupUrl}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          className="flex-1 sm:flex-none text-center px-4 py-2 rounded-lg bg-amber-400 text-gray-900 text-xs font-bold no-underline hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(245,158,11,0.35)] transition-all duration-200 whitespace-nowrap"
+        >
+          Visit Site
+        </a>
       </div>
-    </a>
+    </div>
+  );
+}
+
+/* ── Broker comparison row ────────────────────────────────────────────────── */
+function BrokerRow({ broker, isLast }) {
+  return (
+    <tr className={`${isLast ? "" : "border-b border-white/4"} hover:bg-white/2 transition-colors duration-150`}>
+      <td className="px-5 py-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-lg bg-white/4 border border-white/8 flex items-center justify-center overflow-hidden shrink-0">
+            <img
+              src={broker.logo}
+              alt={broker.name}
+              className="max-w-full max-h-full object-contain p-1.5"
+              onError={(e) => {
+                e.target.style.display = "none";
+                e.target.parentElement.innerHTML = `<span class="text-xs font-bold text-green-400">${broker.name.charAt(0)}</span>`;
+              }}
+            />
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-zinc-100">{broker.name}</p>
+            <p className="text-[0.6rem] text-green-400 uppercase tracking-wider font-bold mt-0.5">{broker.tag}</p>
+          </div>
+        </div>
+      </td>
+
+      <td className="px-5 py-4 text-xs text-zinc-400 leading-relaxed max-w-xs hidden sm:table-cell">
+        {broker.description}
+      </td>
+
+      <td className="px-5 py-4">
+        <div className="flex items-center justify-end gap-2 flex-nowrap">
+          <Link
+            to={broker.path}
+            className="whitespace-nowrap px-3 py-2 rounded-lg border border-white/10 text-xs font-semibold text-zinc-300 no-underline hover:border-green-500/30 hover:text-green-400 transition-colors duration-200"
+          >
+            Read Review
+          </Link>
+          <a
+            href={broker.signupUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="whitespace-nowrap px-3 py-2 rounded-lg bg-amber-400 text-gray-900 text-xs font-bold no-underline hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(245,158,11,0.35)] transition-all duration-200"
+          >
+            Open Account
+          </a>
+        </div>
+      </td>
+    </tr>
   );
 }
 
@@ -135,7 +209,7 @@ export default function Brokers() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 cursor-pointer ${
+              className={`px-3 py-1 rounded-full text-xs font-medium border transition-all duration-200 cursor-pointer ${
                 activeCategory === cat
                   ? "text-green-400 bg-green-500/10 border-green-500/30"
                   : "text-zinc-500 bg-transparent border-white/6 hover:border-white/20 hover:text-zinc-300"
@@ -146,10 +220,10 @@ export default function Brokers() {
           ))}
         </div>
 
-        {/* ── Broker grid ── */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {filtered.map((broker) => (
-            <BrokerCard key={broker.id} broker={broker} />
+        {/* ── Broker list ── */}
+        <div className="flex flex-col gap-3">
+          {filtered.map((broker, i) => (
+            <BrokerListItem key={broker.id} broker={broker} rank={i + 1} />
           ))}
         </div>
 
@@ -160,36 +234,6 @@ export default function Brokers() {
         )}
 
       </div>
-      <div className="max-w-6xl mx-auto px-[5vw] py-12 border-t border-white/6">
-  <div className="flex items-center gap-3 mb-8">
-    <div className="w-1 h-6 bg-green-500 rounded-full" />
-    <h2 className="text-xl font-playfair font-semibold text-zinc-50">Direct Sign Up Links</h2>
-  </div>
-  
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    {[
-      { name: "Exness Nigeria", url: "https://www.exnesspromo.com/en/less-slippage/?partner_id=1sh0vxrgqd", highlight: "Instant Withdrawals" },
-      { name: "JustMarkets Nigeria", url: "https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker", highlight: "1:3000 Leverage" },
-      { name: "HFM Nigeria", url: "https://register.hfm.com/ke/en/new-live-account/?refid=30515020", highlight: "Local Lagos Office" },
-      { name: "FBS Nigeria", url: "https://fbs.partners?ibl=876040&ibp=35444511", highlight: "100% Deposit Bonus" },
-      { name: "XM Nigeria", url: "https://affs.click/MbQNk", highlight: "$30 No-Deposit Bonus" },
-      { name: "FxPro Nigeria", url: "https://direct-fxpro.com/en/partner/2xPncqjwh", highlight: "Raw Spreads" },
-    ].map((item, i) => (
-      <a 
-        key={i}
-        href={item.url} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="group flex flex-col p-4 rounded-sm border border-white/4 bg-white/2 hover:bg-white/4 hover:border-green-500/20 transition-all no-underline"
-      >
-        <div className="flex justify-between items-center mb-1">
-          <span className="text-sm font-semibold text-zinc-200 underline group-hover:text-green-400">{item.name}</span>
-          <span className="text-[10px] text-green-500/80 group-hover:translate-x-1 transition-transform">↗</span>
-        </div>
-      </a>
-    ))}
-  </div>
-</div>
     </div>
   );
 }
