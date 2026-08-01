@@ -23,8 +23,8 @@ import Kemboi from "./components/Kemboi";
 
 // Individual Broker Review Pages
 import Exness from "./exness/Exness";
-import JustMarkets from "./components/JustMarkets";
-import HFM from "./components/HFM";
+import JustMarkets from "./justmarkets/JustMarkets";
+import HFM from "./HFM/HFM";
 import XM from "./components/XM";
 import FBS from "./FBS/FBS";
 import FxPro from "./components/FxPro";

@@ -1,16 +1,6 @@
-import { Link } from "react-router-dom";
+import JustMarketsHero from "../justmarkets/JustMarketsHero";
 
 /* ── Data ─────────────────────────────────────────────────────────────────── */
-const broker = {
-  name: "JustMarkets",
-  logo: "/justmarkets.png",
-  score: "9.6",
-  founded: "2012",
-  headquarters: "Cyprus",
-  regulation: ["CySEC", "FSA", "FSCA", "FSC"],
-  affiliateLink: "https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker",
-};
-
 const pros = [
   "NGN deposits and withdrawals supported",
   "Low minimum deposit from $1",
@@ -95,16 +85,9 @@ const tierColor = {
   "Tier 3": "text-zinc-400 bg-zinc-500/[0.08] border-zinc-500/20",
 };
 
-/* ── Helpers ──────────────────────────────────────────────────────────────── */
-function Stars({ score }) {
-  const filled = Math.round((parseFloat(score) / 10) * 5);
-  return (
-    <span className="text-amber-400 text-base tracking-wide">
-      {"★".repeat(filled)}{"☆".repeat(5 - filled)}
-    </span>
-  );
-}
+const affiliateLink = "https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker";
 
+/* ── Helpers ──────────────────────────────────────────────────────────────── */
 function SectionTitle({ children }) {
   return (
     <div className="mb-6">
@@ -119,90 +102,9 @@ export default function JustMarkets() {
   return (
     <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
 
-      {/* ── Hero / Overview ── */}
-      <div className="border-b border-white/6 bg-[#0d1117]">
-        <div className="max-w-4xl mx-auto px-[5vw] py-12">
+      <JustMarketsHero />
 
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-[0.7rem] text-zinc-600 mb-6">
-            <Link to="/" className="hover:text-zinc-400 transition-colors no-underline">Home</Link>
-            <span>›</span>
-            <Link to="/brokers" className="hover:text-zinc-400 transition-colors no-underline">Brokers</Link>
-            <span>›</span>
-            <span className="text-zinc-400">JustMarkets</span>
-          </div>
-
-          <div className="flex items-start gap-6 flex-wrap">
-
-            {/* Logo */}
-            <div className="w-20 h-20 rounded-2xl flex items-center justify-center bg-white/4 border border-white/8 shrink-0 overflow-hidden">
-              <img
-                src={broker.logo}
-                alt={broker.name}
-                className="w-full h-full object-contain p-2"
-                onError={(e) => {
-                  e.target.style.display = "none";
-                  e.target.parentElement.innerHTML = `<span style="font-size:1.8rem;font-weight:700;color:#4ade80">J</span>`;
-                }}
-              />
-            </div>
-
-            {/* Info */}
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-3 flex-wrap mb-2">
-                <h1 className="font-playfair text-[clamp(1.6rem,3vw,2.4rem)] font-semibold text-zinc-50">
-                  JustMarkets Review
-                </h1>
-                <span className="text-[0.62rem] font-bold px-2.5 py-0.5 rounded-full bg-linear-to-r from-green-700 to-green-500 text-white tracking-wide">
-                  Best for MT5
-                </span>
-              </div>
-
-              <Stars score={broker.score} />
-
-              <div className="flex items-center gap-1.5 mt-1 mb-4">
-                <span className="text-2xl font-bold text-green-400">{broker.score}</span>
-                <span className="text-zinc-600 text-sm">/10</span>
-                <span className="text-zinc-600 text-xs ml-1">— Overall score</span>
-              </div>
-
-              <div className="flex flex-wrap gap-x-6 gap-y-1 text-[0.78rem] text-zinc-500 mb-5">
-                <span>Founded: <span className="text-zinc-300">{broker.founded}</span></span>
-                <span>HQ: <span className="text-zinc-300">{broker.headquarters}</span></span>
-                <span>Regulated by: <span className="text-zinc-300">{broker.regulation.join(", ")}</span></span>
-              </div>
-
-              <a
-                href={broker.affiliateLink}
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-br from-green-600 to-green-700 text-white text-sm font-semibold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
-              >
-                Visit JustMarkets
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="mt-6 md:mt-8 md:px-4 flex justify-center">
-  <a 
-    href="https://one.justmarkets.link/a/17thm0lpq8/landing/global-trusted-broker?promo=5040"
-    target="_blank" 
-    rel="noopener noreferrer sponsored"
-    className="group block w-full max-w-5xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-300 hover:border-blue-500/30"
-  >
-    <img 
-      src="https://justmarkets.com/uploads/promo_materials/jm-banner-global-trusted-broker-en-1200x628.png"
-      alt="JustMarkets - Global Trusted Broker" 
-      width="1200" 
-      height="628" 
-      className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.01]"
-      loading="lazy"
-    />
-  </a>
-</div>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-[5vw] py-12 flex flex-col gap-14">
+      <div className="max-w-4xl mx-auto px-[5vw] py-8 flex flex-col gap-14">
 
         {/* ── Pros & Cons ── */}
         <section>
@@ -355,7 +257,7 @@ export default function JustMarkets() {
             Ready to start trading with JustMarkets? Open an account with as little as $1.
           </p>
           <a
-            href={broker.affiliateLink}
+            href={affiliateLink}
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-sm font-semibold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
@@ -368,31 +270,30 @@ export default function JustMarkets() {
         </div>
 
       </div>
-      <div className="flex justify-center items-center md:my-12 px-2">
-  <a 
-    href="https://one.justmarkets.link/a/17thm0lpq8/?promo=4005"
-    target="_blank"
-    rel="noopener noreferrer sponsored"
-    className="group relative block w-full max-w-3xl overflow-hidden border border-white/10 bg-white/2 transition-all hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
-  >
-    {/* Banner Image */}
-    <img 
-      src="https://justmarkets.com/uploads/promo_materials/jm-1200x628-leverage-3000-en.png" 
-      alt="JustMarkets - 1:3000 Leverage"
-      width="1200"
-      height="628"
-      className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.03]"
-      loading="lazy"
-    />
 
-    {/* Subtle Glassmorphism Overlay Label */}
-    <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
-      <p className="text-[9px] uppercase tracking-widest text-zinc-400 font-bold">
-        JustMarkets Official Partner
-      </p>
-    </div>
-  </a>
-</div>
+      {/* ── Second partner banner ── */}
+      <div className="flex justify-center items-center md:my-12 px-2">
+        <a
+          href="https://one.justmarkets.link/a/17thm0lpq8/?promo=4005"
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          className="group relative block w-full max-w-3xl overflow-hidden border border-white/10 bg-white/2 transition-all hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+        >
+          <img
+            src="https://justmarkets.com/uploads/promo_materials/jm-1200x628-leverage-3000-en.png"
+            alt="JustMarkets - 1:3000 Leverage"
+            width="1200"
+            height="628"
+            className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.03]"
+            loading="lazy"
+          />
+          <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
+            <p className="text-[9px] uppercase tracking-widest text-zinc-400 font-bold">
+              JustMarkets Official Partner
+            </p>
+          </div>
+        </a>
+      </div>
     </div>
   );
 }
