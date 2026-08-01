@@ -26,7 +26,7 @@ function Stars({ score }) {
 export default function HFMHero({ broker = defaultBroker }) {
   return (
     <div className="border-b border-white/6 bg-[#0d1117]">
-      <div className="max-w-4xl mx-auto px-[5vw] py-12">
+      <div className="max-w-4xl mx-auto px-[5vw] py-8">
 
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-[0.7rem] text-zinc-600 mb-6">
@@ -44,7 +44,7 @@ export default function HFMHero({ broker = defaultBroker }) {
             <img
               src={broker.logo}
               alt={broker.name}
-              className="w-full h-full object-contain p-2"
+              className="w-full h-full object-contain"
               onError={(e) => {
                 e.target.style.display = "none";
                 e.target.parentElement.innerHTML = `<span style="font-size:1.8rem;font-weight:700;color:#4ade80">${broker.name.charAt(0)}</span>`;
@@ -67,7 +67,7 @@ export default function HFMHero({ broker = defaultBroker }) {
 
             <Author />
 
-            <div className="flex flex-wrap gap-x-6 gap-y-1 text-[0.78rem] text-zinc-500 mb-5">
+            <div className="flex flex-wrap gap-x-6 gap-y-1 text-[0.78rem] text-zinc-500 mb-4">
               <span>Regulated by: <span className="text-zinc-300">{broker.regulation.join(", ")}</span></span>
             </div>
 
@@ -75,9 +75,10 @@ export default function HFMHero({ broker = defaultBroker }) {
               href={broker.affiliateLink}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-br from-green-600 to-green-700 text-white text-sm font-semibold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white text-sm font-bold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
             >
               Visit {broker.name}
+              <span className="text-md font-bold">→</span>
             </a>
           </div>
         </div>
@@ -98,7 +99,7 @@ export default function HFMHero({ broker = defaultBroker }) {
             className="block"
           >
             <img
-              src="https://hfm.com/ke/en/promotions/loyalty-program?refid=30515020"
+              src="https://banner-api.hfm.com/banner/0bdeda68?regulator=HFKE&refid=30515020"
               alt="Trade with HFM"
               className="max-w-full h-auto block"
               width="728"

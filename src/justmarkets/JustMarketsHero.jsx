@@ -26,7 +26,7 @@ function Stars({ score }) {
 export default function JustMarketsHero({ broker = defaultBroker }) {
   return (
     <div className="border-b border-white/6 bg-[#0d1117]">
-      <div className="max-w-4xl mx-auto px-[5vw] py-12">
+      <div className="max-w-4xl mx-auto px-[5vw] py-8">
 
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-[0.7rem] text-zinc-600 mb-6">

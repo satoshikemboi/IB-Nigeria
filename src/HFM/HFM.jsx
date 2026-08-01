@@ -123,7 +123,7 @@ export default function HFM() {
 
       <HFMHero broker={broker} />
 
-      <div className="max-w-4xl mx-auto px-[5vw] py-12 flex flex-col gap-14">
+      <div className="max-w-4xl mx-auto px-[5vw] py-6 flex flex-col gap-14">
 
         {/* ── Pros & Cons ── */}
         <section>
@@ -280,9 +280,6 @@ export default function HFM() {
                   width="728"
                   height="90"
                 />
-                <span className="absolute bottom-0 right-0 bg-black/60 text-[10px] text-zinc-400 px-1 rounded-tl">
-                  Ad
-                </span>
               </a>
             </div>
           </div>
@@ -297,9 +294,10 @@ export default function HFM() {
             href={broker.affiliateLink}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-linear-to-br from-green-600 to-green-700 text-white text-sm font-semibold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-red-600 text-white text-sm font-semibold rounded-lg no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)] transition-all duration-200"
           >
             Open HFM Account
+            <span className="text-md font-bold">→</span>
           </a>
           <p className="text-[0.65rem] text-zinc-700">
             Affiliate disclosure: We may earn a commission if you open an account via our link. This does not affect our ratings.
