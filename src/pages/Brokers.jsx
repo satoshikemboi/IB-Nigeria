@@ -61,15 +61,9 @@ function BrokerCard({ broker }) {
       href={broker.path}
       className="group flex flex-col items-center justify-center gap-4 p-6 rounded-2xl border border-white/6 bg-white/2 hover:border-green-500/30 hover:bg-green-500/4 transition-all duration-200 no-underline"
     >
-      {/* Trophy icon */}
-      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/8 border border-green-500/20 group-hover:bg-green-500/[0.14] transition-all duration-200">
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-green-400" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M11 17.938A8.001 8.001 0 0 1 12 2a8 8 0 0 1 1 15.938V20h3v2H8v-2h3v-2.062zM5 4H3a1 1 0 0 0-1 1v3a4 4 0 0 0 4 4v-2a2 2 0 0 1-2-2V6h1V4zm14 0h-1v2h1v3a2 2 0 0 1-2 2v2a4 4 0 0 0 4-4V5a1 1 0 0 0-1-1z"/>
-        </svg>
-      </div>
 
       {/* Logo Area */}
-      <div className="w-20 h-10 flex items-center justify-center relative">
+      <div className="w-full h-full flex items-center justify-center relative">
         <img
           src={broker.logo}
           alt={broker.name}
@@ -85,7 +79,7 @@ function BrokerCard({ broker }) {
       </div>
 
       {/* Info */}
-      <div className="text-center">
+      <div className="flex flex-col ">
         <p className="text-sm font-semibold text-zinc-100 group-hover:text-green-400 transition-colors duration-200">
           {broker.name}
         </p>
@@ -110,19 +104,14 @@ export default function Brokers() {
 
       {/* ── Page header ── */}
       <div className="border-b border-white/6 bg-[#0d1117]">
-        <div className="max-w-6xl mx-auto px-[5vw] py-12">
-
-          <div className="inline-flex items-center gap-2 text-[0.7rem] text-green-400 tracking-wide border border-green-500/25 bg-green-500/6 px-3 py-1.5 rounded-full mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-            Expert Reviewed · Updated March 2026
-          </div>
+        <div className="max-w-6xl mx-auto px-[5vw] py-8">
 
           <h1 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-semibold text-zinc-50 leading-tight mb-3">
             Broker Reviews
           </h1>
 
-          <p className="text-lg text-zinc-300 leading-relaxed max-w-3xl">
-            <span className="text-green-400 font-bold">fxbrokers.ng</span> provides unbiased forex <Link to="/brokers" className="underline">broker reviews</Link> and ratings to help Nigerian
+          <p className="text-md text-zinc-300 leading-relaxed max-w-3xl">
+            <span className="text-green-400 font-bold">fxbrokers.ng</span> provides unbiased forex reviews and ratings to help Nigerian
             traders find the best broker for their needs. Our team tests and assesses brokers
             on over 50 variables including NGN deposit support, spreads, regulation, and
             withdrawal speed.
