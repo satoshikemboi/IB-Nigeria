@@ -5,7 +5,6 @@ const links = [
   { label: "Brokers",   to: "/brokers",   title: "Compare Best Forex Brokers in Nigeria" },
   { label: "Guides",    to: "/guides",    title: "Forex Trading Guides for Beginners" },
   { label: "Compare",   to: "/compare",   title: "Side-by-Side Broker Comparison" },
-  { label: "NGN Rates", to: "/ngn-rates", title: "Live Naira Parallel Market Rates" },
   { label: "About",     to: "/about",     title: "About fxbrokers.ng Methodology" },
 ];
 
@@ -61,9 +60,6 @@ export default function Navbar() {
 
         {/* ── Desktop right side ── */}
         <div className="hidden md:flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/8 border border-green-500/20 text-[0.68rem] font-medium text-green-400 tracking-wide uppercase">
-            🇳🇬 NGN Accounts
-          </span>
 
           <Link
             to="/compare"
