@@ -88,8 +88,7 @@ const stats = [
 ];
 
 const trust = [
-  "FCA Regulated", "ASIC Approved", "CySEC Licensed",
-  "No Paid Rankings", "NGN Friendly",
+  "No Paid Rankings", "NGN Friendly", "Broker reviews"
 ];
 
 /* ── Stars ────────────────────────────────────────────────────────────────── */
@@ -183,7 +182,7 @@ export default function Home() {
             {/* Subheadline */}
             <p className="text-base leading-7 text-zinc-400 font-light max-w-115 mb-8">
               We test and rank brokers on NGN deposits, Naira withdrawals,
-              low spreads, and regulation — everything that matters to
+              low spreads, and regulation, everything that matters to
               traders in Nigeria.
             </p>
 
@@ -202,6 +201,11 @@ export default function Home() {
               >
                 Compare Brokers
               </a>
+            </div>
+            <div className="mt-8 max-w-full overflow-hidden border border-green-500/20 shadow-lg shadow-green-500/10">
+            <a href="https://one.exnessonelink.com/intl/en/a/ggaswwew8a">
+          <img src="https://d3dpet1g0ty5ed.cloudfront.net/EN_Take_control_1200x628.png" width="1200" height="628" alt="" />
+        </a>
             </div>
 
             {/* Stats */}
@@ -299,12 +303,9 @@ export default function Home() {
                      href={b.link}
                      target="_blank"
                      rel="noopener noreferrer sponsored"
-                     className="w-24 shrink-0 inline-flex items-center justify-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-md border border-green-500/30 text-green-400 hover:bg-green-500/10 hover:border-green-400 transition-all duration-200 no-underline group"
+                     className="w-24 shrink-0 inline-flex items-center justify-center gap-1 text-xs font-semibold px-3 text-green-400 hover:bg-green-500/10 hover:border-green-400 transition-all duration-200 no-underline group"
                      >
                       {b.action}
-                        <span className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                          ↗
-                        </span>
                     </a>
                   </div>
                 ))}
