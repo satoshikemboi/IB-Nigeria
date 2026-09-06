@@ -27,6 +27,7 @@ export default function Navbar() {
             <img src="/logo.png" alt="fxbrokers.ng Logo" className="w-10 h-10 object-contain rounded-full bg-white/5 border border-white/10" />
           <span className="font-serif text-[1.18rem] font-semibold tracking-tight text-zinc-50 group-hover:text-green-400 transition-colors">
             fx<span className="text-green-400">brokers</span>
+            <span className="text-zinc-500">.com</span>
             <span className="text-zinc-500">.ng</span>
           </span>
         </Link>

@@ -112,7 +112,7 @@ function SectionTitle({ children }) {
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function Exness() {
   return (
-    <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm">
+    <div className="bg-[#080c0e] text-zinc-300 min-h-screen font-dm pb-24">
 
       <ExnessHero broker={broker} />
 
@@ -282,11 +282,12 @@ export default function Exness() {
           </p>
         </div>
       </div>
+
       <div className="flex justify-center items-center py-10 px-4">
         <a
           href="https://one.exnessonelink.com/intl/en/a/1sh0vxrgqd"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer sponsored"
           className="block transition-transform hover:scale-[1.01] duration-300"
         >
           <img
@@ -297,6 +298,21 @@ export default function Exness() {
           />
         </a>
       </div>
+
+      {/* ── Sticky Bottom CTA Bar ── */}
+<div className="fixed bottom-0 left-0 right-0 z-50 bg-[#080c0e]/95 backdrop-blur-md border-t border-white/10 p-3 shadow-[0_-8px_24px_rgba(0,0,0,0.6)]">
+  <div className="max-w-4xl mx-auto px-2">
+    <a
+      href={broker.affiliateLink}
+      target="_blank"
+      rel="noopener noreferrer sponsored"
+      className="w-full inline-flex items-center justify-center px-6 py-2 bg-amber-400 hover:bg-amber-300 text-gray-800 text-lg sm:text-base font-semibold rounded-lg transition-all duration-200 shadow-lg hover:scale-[1.01]"
+    >
+      Open Exness Account →
+    </a>
+  </div>
+</div>
+
     </div>
   );
 }
