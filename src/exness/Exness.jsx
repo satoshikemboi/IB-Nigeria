@@ -8,7 +8,7 @@ const broker = {
   founded: "2008",
   headquarters: "Cyprus",
   regulation: ["FCA", "CySEC", "FSCA", "CBCS"],
-  affiliateLink: "https://www.exnesspromo.com/en/less-slippage/?partner_id=1sh0vxrgqd",
+  affiliateLink: "https://one.exnessonelink.com/a/ggaswwew8a",
 };
 
 const pros = [
